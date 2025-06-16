@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import marineMetrologyDiagram from 'C:\\Users\\ipewz\\Desktop\\WORK_HAIFA\\TC\\my-grant-org-website\\src\\Picture1.png'; // Adjust path as needed
+import marineMetrologyDiagram from 'C:\\Users\\ipewz\\Desktop\\WORK_HAIFA\\TC\\src\\Picture1.png'; // Adjust path as needed
 
 const HomePage = () => {
   return (
