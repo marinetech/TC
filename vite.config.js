@@ -1,15 +1,14 @@
 // vite.config.js
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'; // <--- וודא ששורה זו קיימת ונכונה
 import react from '@vitejs/plugin-react';
+
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url'; // <--- וודא שזה `from 'url'` עם שווה יחיד
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-
+import { readFileSync } from 'fs';
 
 function getRepoName() {
   try {
@@ -19,20 +18,24 @@ function getRepoName() {
 
     if (homepage) {
       const url = new URL(homepage);
-      console.log('Detected homepage URL:', homepage); // Add this
-      console.log('Extracted repository path:', url.pathname); // Add this
+      console.log('Detected homepage URL in vite.config.js:', homepage);
+      console.log('Extracted repository path in vite.config.js:', url.pathname);
       return url.pathname;
     }
   } catch (error) {
-    console.warn('Could not read package.json or homepage. Defaulting base to "/"');
+    // חשוב: נסה לקרוא שוב מחדש את השגיאה כאן
+    console.warn('Could not read package.json or homepage in vite.config.js. Defaulting base to "/"');
+    console.error('Specific error during package.json read:', error); // הדפסת השגיאה הספציפית
   }
-  console.log('Defaulting base to "/"'); // Add this
+  console.log('Defaulting base to "/" in vite.config.js');
   return '/';
 }
 
 const base = process.env.NODE_ENV === 'production'
   ? getRepoName()
   : '/';
+
+console.log('Final Vite base configuration for build:', base);
 
 export default defineConfig({
   plugins: [react()],

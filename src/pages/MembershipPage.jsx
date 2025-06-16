@@ -3,97 +3,109 @@ import React from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent, Button, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
-// Import Material-UI Icons for benefits
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt'; // For networking
-import LightbulbIcon from '@mui/icons-material/Lightbulb'; // For resources/knowledge
-import GavelIcon from '@mui/icons-material/Gavel'; // For influence
-import HandshakeIcon from '@mui/icons-material/Handshake'; // For support
-import SchoolIcon from '@mui/icons-material/School'; // For learning/development
+// Import Material-UI Icons
+import ScienceIcon from '@mui/icons-material/Science'; // General science/research
+import EventNoteIcon from '@mui/icons-material/EventNote'; // Organizing events
+import DevicesIcon from '@mui/icons-material/Devices'; // Developing sensors/instrumentation
+import PolicyIcon from '@mui/icons-material/Policy'; // Standards/protocols
+import PublicIcon from '@mui/icons-material/Public'; // Extreme environments/global applications
+import CodeIcon from '@mui/icons-material/Code'; // Signal processing/AI
+import HandshakeIcon from '@mui/icons-material/Handshake'; // General collaboration/support
 
-// --- Static Data for Demonstration ---
-const membershipBenefits = [
+
+// --- Data for Membership Interests (replacing benefits) ---
+const membershipInterests = [
   {
     id: 1,
-    title: "Unparalleled Networking Opportunities",
-    description: "Connect with leading researchers, esteemed colleagues, and influential figures in your field through exclusive events, online forums, and mentorship programs.",
-    icon: <PeopleAltIcon fontSize="large" color="primary" />,
+    title: "Organizing Events",
+    description: "Contribute to planning and executing workshops, conferences, and seminars in marine metrology.",
+    icon: <EventNoteIcon fontSize="large" color="primary" />,
   },
   {
     id: 2,
-    title: "Access to Exclusive Resources & Funding",
-    description: "Gain priority access to our comprehensive database of research tools, publications, and specialized funding opportunities, including members-only grants and collaborative projects.",
-    icon: <LightbulbIcon fontSize="large" color="primary" />,
+    title: "Sensor Development & Instrumentation",
+    description: "Work on developing new sensors, designing and testing instrumentation for diverse marine applications.",
+    icon: <DevicesIcon fontSize="large" color="primary" />,
   },
   {
     id: 3,
-    title: "Shape the Future of Research",
-    description: "Your voice matters. Influence policy, contribute to industry standards, and participate in advocacy efforts that drive scientific progress and ethical practices.",
-    icon: <GavelIcon fontSize="large" color="primary" />,
+    title: "Standards & Protocols",
+    description: "Help define and implement industry standards, measurement protocols, and QA/QC procedures for oceanic data.",
+    icon: <PolicyIcon fontSize="large" color="primary" />,
   },
   {
     id: 4,
-    title: "Dedicated Support & Guidance",
-    description: "Receive personalized support for grant applications, ethical reviews, and career development, ensuring you have the backing to achieve your research goals.",
-    icon: <HandshakeIcon fontSize="large" color="primary" />,
+    title: "Metrology in Extreme Environments",
+    description: "Focus on the challenges and solutions for accurate measurements in harsh and challenging marine conditions.",
+    icon: <PublicIcon fontSize="large" color="primary" />,
   },
   {
     id: 5,
-    title: "Continuous Professional Development",
-    description: "Benefit from members-only workshops, webinars, and discounted rates for our annual conferences, keeping you at the forefront of scientific innovation and methodology.",
-    icon: <SchoolIcon fontSize="large" color="primary" />,
+    title: "Signal Processing & AI Solutions",
+    description: "Engage in advanced signal processing for marine metrology data, including AI-driven calibration algorithms.",
+    icon: <CodeIcon fontSize="large" color="primary" />,
+  },
+  {
+    id: 6,
+    title: "Error & Uncertainty Analysis",
+    description: "Dive into methodologies for error correction, uncertainty quantification, and ensuring data reliability.",
+    icon: <ScienceIcon fontSize="large" color="primary" />,
+  },
+  {
+    id: 7,
+    title: "Sensor Calibration & Synchronization",
+    description: "Work on developing standards for sensor calibration and innovative sensor synchronization techniques.",
+    icon: <HandshakeIcon fontSize="large" color="primary" />,
+  },
+  {
+    id: 8,
+    title: "Sensor Testing & Stability",
+    description: "Participate in dynamic, static, and long-term stability testing of subsea sensors.",
+    icon: <DevicesIcon fontSize="large" color="primary" />,
+  },
+  {
+    id: 9,
+    title: "Platforms & Scientific Applications",
+    description: "Explore new platforms for marine metrology and contribute to diverse scientific applications of the technology.",
+    icon: <ScienceIcon fontSize="large" color="primary" />,
   },
 ];
-// --- End Static Data ---
+// --- End Data ---
 
 const MembershipPage = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       {/* Hero Section */}
-      <Box
-        sx={{
-          py: 6,
-          px: 2,
-          textAlign: 'center',
-          backgroundColor: (theme) => theme.palette.grey[100],
-          borderRadius: 2,
-          mb: 6,
-        }}
-      >
+      <Box sx={{ py: 6, px: 2, textAlign: 'center', backgroundColor: (theme) => theme.palette.grey[100], borderRadius: 2, mb: 6, }}>
         <Typography variant="h3" component="h1" gutterBottom>
-          Join Our Thriving Research Community
+          Join the Marine Metrology TC Community
         </Typography>
         <Typography variant="h5" component="p" color="text.secondary" sx={{ mb: 3 }}>
-          Become a member of the Grant Organization and unlock a world of opportunities, support, and collaboration.
+          We are always looking for passionate volunteers to contribute to the advancement of marine metrology.
         </Typography>
-        <Button
-          variant="contained"
-          size="large"
-          component={RouterLink}
-          to="/contact" // Assuming "Join Us" leads to contact or a specific application form
-          aria-label="Join Us - Navigate to membership application"
-        >
-          Join Us Today!
+        <Button variant="contained" size="large" component={RouterLink} to="/contact" aria-label="Contact us to volunteer" >
+          Volunteer With Us!
         </Button>
       </Box>
 
-      {/* Benefits Section */}
+      {/* Areas of Interest Section */}
       <Box sx={{ mb: 6 }}>
         <Typography variant="h4" component="h2" align="center" gutterBottom sx={{ mb: 4 }}>
-          Benefits of Membership
+          Areas Where You Can Contribute
         </Typography>
-        <Grid container spacing={4}>
-          {membershipBenefits.map((benefit) => (
-            <Grid item xs={12} sm={6} md={4} key={benefit.id}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
+        <Grid container spacing={4} >
+          {membershipInterests.map((interest) => (
+            <Grid item  size={12} key={interest.id}>
+              <Card sx={{ backgroundColor: (theme) => theme.palette.grey[100],height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Box sx={{ mb: 2 }}>
-                    {benefit.icon}
+                    {interest.icon}
                   </Box>
                   <Typography variant="h6" component="h3" gutterBottom>
-                    {benefit.title}
+                    {interest.title}
                   </Typography>
                   <Typography variant="body1" color="text.secondary">
-                    {benefit.description}
+                    {interest.description}
                   </Typography>
                 </CardContent>
               </Card>
@@ -102,23 +114,16 @@ const MembershipPage = () => {
         </Grid>
       </Box>
 
-      {/* Call to Action Section - Again */}
+      {/* Call to Action Section */}
       <Box sx={{ textAlign: 'center', my: 6, py: 4, backgroundColor: (theme) => theme.palette.info.light, borderRadius: 2 }}>
         <Typography variant="h4" component="h2" gutterBottom>
-          Ready to Elevate Your Research Career?
+          Ready to Make an Impact?
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-          Take the next step and become part of a community dedicated to scientific excellence and innovation.
+          If you're passionate about marine metrology and want to contribute, we'd love to hear from you!
         </Typography>
-        <Button
-          variant="contained"
-          size="large"
-          color="secondary"
-          component={RouterLink}
-          to="/contact"
-          aria-label="Apply for membership - Navigate to contact page"
-        >
-          Apply for Membership
+        <Button variant="contained" size="large" color="secondary" component={RouterLink} to="/contact" aria-label="Contact us about membership" >
+          Get Involved!
         </Button>
       </Box>
     </Container>
