@@ -19,13 +19,13 @@ import AccessibilityStatementPage from './pages/AccessibilityStatementPage';
 
 // Define the application routes
 const appRoutes = [
-  { path: "/", element: <HomePage /> },
-  { path: "/contact", element: <ContactPage /> },
-  { path: "/activities", element: <ActivitiesPage /> },
-  { path: "/membership", element: <MembershipPage /> },
-  { path: "/privacy-policy", element: <PrivacyPolicyPage /> },
-  { path: "/accessibility-statement", element: <AccessibilityStatementPage /> },
-  { path: "/Activities_Calendar", element: <ActivitiesCalendarPage /> },
+  { path: "/TC/", element: <HomePage /> },
+  { path: "/TC/contact", element: <ContactPage /> },
+  { path: "/TC/activities", element: <ActivitiesPage /> },
+  { path: "/TC/membership", element: <MembershipPage /> },
+  { path: "/TC/privacy-policy", element: <PrivacyPolicyPage /> },
+  { path: "/TC/accessibility-statement", element: <AccessibilityStatementPage /> },
+  { path: "/TC/Activities_Calendar", element: <ActivitiesCalendarPage /> },
 ];
 
 function App() {
