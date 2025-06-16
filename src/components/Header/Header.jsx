@@ -47,7 +47,7 @@ const Header = () => {
         <IconButton color="inherit" aria-label="Close navigation menu" onClick={handleDrawerToggle}>
           <CloseIcon />
         </IconButton>
-      </Box>
+      </Box> 
       <List> 
         {navLinks.map((link) => (
           <ListItem key={link.to} disablePadding>
