@@ -18,6 +18,15 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
+/*
+const navLinks = [
+  { "button_name": "Home", "to": "/TC/", "aria_label": "Navigate to Home page." },
+  { "button_name": "Activities", "to": "/TC/activities", "aria_label": "Navigate to Activities and Initiatives page." },
+  { "button_name": "Membership", "to": "/TC/membership", "aria_label": "Navigate to Membership page." },
+  { "button_name": "Contact", "to": "/TC/contact", "aria_label": "Navigate to Contact page." },
+  { "button_name": "Activities Calendar", "to": "/TC/Activities_Calendar", "aria_label": "Activities Calendar Page." }
+];
+*/
 const navLinks = [
   { "button_name": "Home", "to": "/", "aria_label": "Navigate to Home page." },
   { "button_name": "Activities", "to": "/activities", "aria_label": "Navigate to Activities and Initiatives page." },
@@ -25,7 +34,6 @@ const navLinks = [
   { "button_name": "Contact", "to": "/contact", "aria_label": "Navigate to Contact page." },
   { "button_name": "Activities Calendar", "to": "/Activities_Calendar", "aria_label": "Activities Calendar Page." }
 ];
-
 const Header = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -57,7 +65,7 @@ const Header = () => {
       <Toolbar>
         {/* Logo or organization name */}
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
-          <Link component={RouterLink} to="/" color="inherit" underline="none" aria-label="Organization home page"> {/* Translated */}
+          <Link component={RouterLink} to="/TC/" color="inherit" underline="none" aria-label="Organization home page"> {/* Translated */}
             Grant Organization
           </Link>
         </Typography>

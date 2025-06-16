@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import CommitteeStructureDiagram from './CommitteeStructureDiagram'; // ייבוא הרכיב החדש
+import CommitteeStructureDiagramWithReactFlow from './CommitteeStructureDiagramWithReactFlow'; // ייבוא הרכיב החדש
 import { committeeStructureData } from './committeeData'; // ייבוא הנתונים
 
 const HomePage = () => {
@@ -10,9 +10,13 @@ const HomePage = () => {
       {/* Hero Section - Mission, Vision, and Objectives */}
       <Box
         sx={{
-          py: 8,mb: 4, px: 2,borderRadius: 2, textAlign: 'center',
+          py: 8,
+          px: 2,
+          textAlign: 'center',
           backgroundColor: (theme) => theme.palette.primary.light,
-          color: (theme) => theme.palette.primary.contrastText,         
+          color: (theme) => theme.palette.primary.contrastText,
+          borderRadius: 2,
+          mb: 4,
         }}
       >
         <Typography variant="h3" component="h1" gutterBottom sx={{ color: 'white' }}>
@@ -27,9 +31,11 @@ const HomePage = () => {
           <Typography variant="h5" component="h3" gutterBottom sx={{ color: 'white' }}>
             Technical Committee Structure
           </Typography>
-          <CommitteeStructureDiagram data={committeeStructureData} />  
+          <CommitteeStructureDiagramWithReactFlow data={committeeStructureData} /> {/* כאן אנו משלבים את הדיאגרמה */}
           <Typography variant="caption" display="block" sx={{ mt: 1, color: 'white' }}>
-            Diagram illustrating the structure and focus areas of the Technical Committee on Marine Metrology.
+            הדיאגרמה מציגה את המבנה ותחומי המיקוד של הוועדה הטכנית למטרולוגיה ימית.
+            <br/>
+            ניתן לגרור ולשנות את התצוגה (Zoom In/Out) על הדיאגרמה.
           </Typography>
         </Box>
 
