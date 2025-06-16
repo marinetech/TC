@@ -48,7 +48,7 @@ const Header = () => {
           <CloseIcon />
         </IconButton>
       </Box>
-      <List>
+      <List> 
         {navLinks.map((link) => (
           <ListItem key={link.to} disablePadding>
             <ListItemButton component={RouterLink} to={link.to} aria-label={link.aria_label} sx={{ textAlign: 'center' }}>
