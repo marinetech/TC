@@ -95,7 +95,7 @@ const MembershipPage = () => {
         </Typography>
         <Grid container spacing={4} >
           {membershipInterests.map((interest) => (
-            <Grid item  size={12} key={interest.id}>
+            <Grid item  size={4} key={interest.id}>
               <Card sx={{ backgroundColor: (theme) => theme.palette.grey[100],height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Box sx={{ mb: 2 }}>
