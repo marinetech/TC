@@ -30,7 +30,7 @@ const appRoutes = [
 
 function App() {
   return (
-    <Router basename="/1">
+    <Router basename="/">
       <CssBaseline />
       <Header />
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
