@@ -54,7 +54,7 @@ const Header = () => {
             <ListItemButton component={RouterLink} to={link.to} aria-label={link.aria_label} sx={{ textAlign: 'center' }}>
               <ListItemText primary={link.button_name} />
             </ListItemButton>
-          </ListItem>
+          </ListItem> 
         ))}
       </List>
     </Box>
