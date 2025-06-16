@@ -1,0 +1,49 @@
+// src/App.jsx
+import React from 'react';
+import { Container, CssBaseline } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+// Import components
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
+// Import pages
+import HomePage from './pages/HomePage';
+import ContactPage from './pages/ContactPage';
+import ActivitiesPage from './pages/ActivitiesPage';
+import MembershipPage from './pages/MembershipPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import ActivitiesCalendarPage from './pages/ActivitiesCalendarPage';
+import AccessibilityStatementPage from './pages/AccessibilityStatementPage';
+
+
+// Define the application routes
+const appRoutes = [
+  { path: "/", element: <HomePage /> },
+  { path: "/contact", element: <ContactPage /> },
+  { path: "/activities", element: <ActivitiesPage /> },
+  { path: "/membership", element: <MembershipPage /> },
+  { path: "/privacy-policy", element: <PrivacyPolicyPage /> },
+  { path: "/accessibility-statement", element: <AccessibilityStatementPage /> },
+  { path: "/Activities_Calendar", element: <ActivitiesCalendarPage /> },
+];
+
+function App() {
+  return (
+    <Router>
+      <CssBaseline />
+      <Header />
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Routes>
+          {appRoutes.map((route) => (
+            // Using route.path as key for stable rendering of routes
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </Container>
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;
