@@ -8,6 +8,9 @@ import { readFileSync } from 'fs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
+
+
 function getRepoName() {
   try {
     const packageJsonPath = path.resolve(__dirname, 'package.json');
@@ -16,11 +19,14 @@ function getRepoName() {
 
     if (homepage) {
       const url = new URL(homepage);
+      console.log('Detected homepage URL:', homepage); // Add this
+      console.log('Extracted repository path:', url.pathname); // Add this
       return url.pathname;
     }
   } catch (error) {
     console.warn('Could not read package.json or homepage. Defaulting base to "/"');
   }
+  console.log('Defaulting base to "/"'); // Add this
   return '/';
 }
 
