@@ -57,7 +57,7 @@ const Header = () => {
       <Toolbar>
         {/* Logo or organization name */}
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
-          <Link component={RouterLink} to="/" color="inherit" underline="none" aria-label="Organization home page"> {/* Translated */}
+          <Link component={RouterLink} to="/TC/" color="inherit" underline="none" aria-label="Organization home page"> {/* Translated */}
             Grant Organization
           </Link>
         </Typography>
