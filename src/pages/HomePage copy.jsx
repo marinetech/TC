@@ -1,30 +1,39 @@
 import React from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import CommitteeStructureDiagram from './CommitteeStructureDiagram'; // ייבוא הרכיב החדש
+import { committeeStructureData } from './committeeData'; // ייבוא הנתונים
 
 const HomePage = () => {
   return (
-    <Box>
+    <Container maxWidth="lg">
       {/* Hero Section - Mission, Vision, and Objectives */}
       <Box
         sx={{
-          py: 8,
-          px: 2,
-          textAlign: 'center',
+          py: 8,mb: 4, px: 2,borderRadius: 2, textAlign: 'center',
           backgroundColor: (theme) => theme.palette.primary.light,
-          color: (theme) => theme.palette.primary.contrastText,
-          borderRadius: 2,
-          mb: 4,
+          color: (theme) => theme.palette.primary.contrastText,         
         }}
       >
-        <Typography variant="h1" component="h1" gutterBottom sx={{ color: 'white' }}>
-          Advancing Excellence in Research
+        <Typography variant="h3" component="h1" gutterBottom sx={{ color: 'white' }}>
+          Advancing Excellence in Marine Metrology Research
         </Typography>
-        <Typography variant="h5" component="p" sx={{ mb: 4, color: 'white' }}>
-          Our organization is committed to supporting, funding, and empowering leading researchers
-          across various fields, for a better future.
+        <Typography variant="h6" component="p" sx={{ mb: 4, color: 'white' }}>
+          The Marine Metrology Technical Committee (TC) is part of the IEEE OES organization.
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
+
+        {/* Diagram Embedding - Using the new dynamic component */}
+        <Box sx={{ my: 4 }}>
+          <Typography variant="h5" component="h3" gutterBottom sx={{ color: 'white' }}>
+            Technical Committee Structure
+          </Typography>
+          <CommitteeStructureDiagram data={committeeStructureData} />  
+          <Typography variant="caption" display="block" sx={{ mt: 1, color: 'white' }}>
+            Diagram illustrating the structure and focus areas of the Technical Committee on Marine Metrology.
+          </Typography>
+        </Box>
+
+        <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
           <Grid item xs={12} md={4}>
             <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
               <CardContent>
@@ -32,8 +41,7 @@ const HomePage = () => {
                   Our Mission
                 </Typography>
                 <Typography variant="body1">
-                  To support groundbreaking research and visionary researchers by providing grants
-                  and essential resources, while fostering an environment of innovation and collaboration.
+                  To advance the science and practice of marine sensor design and data processing through the development of standards, methods, and technologies that ensure the accuracy, reliability, and interoperability of ocean measurements in diverse and challenging marine environments.
                 </Typography>
               </CardContent>
             </Card>
@@ -45,8 +53,7 @@ const HomePage = () => {
                   Our Vision
                 </Typography>
                 <Typography variant="body1">
-                  To be the leading body in Israel for promoting research and development, serving as a beacon of
-                  knowledge and inspiration for future generations of scientists.
+                  To be the leading body in Israel for promoting research and development in marine metrology, serving as a beacon of knowledge and inspiration for future generations of scientists.
                 </Typography>
               </CardContent>
             </Card>
@@ -58,8 +65,7 @@ const HomePage = () => {
                   Key Objectives
                 </Typography>
                 <Typography variant="body1">
-                  Increasing the scope of grants, fostering international collaborations, mentoring
-                  and nurturing young researchers, and disseminating knowledge to the wider public.
+                  Promoting through funding interdisciplinary activities via conferences, invited talks, joint courses, and data sharing. Our fields of interest include: establishing standardized procedures for oceanic measurements and quality assurance/quality control frameworks; addressing metrology challenges in extreme marine environments; promoting best practices in marine instrument design, development, and testing; promoting robust signal processing techniques and AI-driven solutions for sensor data calibration and analysis; establishing calibration protocols and reference standards; enabling error correction and uncertainty analysis; developing sensor synchronization techniques; assessing long-term stability of underwater sensors; supporting development and evaluation of ocean measurement platforms; and facilitating application of ocean measurement technology to scientific research.
                 </Typography>
               </CardContent>
             </Card>
@@ -69,44 +75,42 @@ const HomePage = () => {
 
       {/* Initiatives and News Section */}
       <Box sx={{ my: 6 }}>
-        <Typography variant="h2" component="h2" align="center" gutterBottom>
-          Latest Initiatives & News
+        <Typography variant="h4" component="h2" align="center" gutterBottom>
+          Highlights of Key Initiatives & Upcoming Events
         </Typography>
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
+          <Grid item size={12} md={6}>
             <Card>
               <CardContent>
                 <Typography variant="h6" component="h3">
-                  New Call for Biotech Research Grants
+                  Tech4Bio Conference
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                  Published on: June 10, 2025
+                  Oct. 21-23, 2025, Haifa, Israel
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2 }}>
-                  We are pleased to announce a new call for grants in the field of Biotechnology,
-                  encouraging innovative research with the potential to impact human health.
+                  Dedicated to the development of acoustic sensors for marine biology applications.
                 </Typography>
-                <Button variant="contained" component={RouterLink} to="/activities" aria-label="Read more about biotech grant call">
-                  Read More
+                <Button variant="contained" href="https://marinetech.github.io/Tech4Bio2025.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Tech4Bio conference">
+                  Learn More
                 </Button>
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item size={12} md={6}>
             <Card>
               <CardContent>
                 <Typography variant="h6" component="h3">
-                  Annual Researchers' Conference 2025: Date and Collaborations
+                  BTS’25 Conference
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                  Published on: June 1, 2025
+                  Nov 9-16, 2025, Limassol, Cyprus
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2 }}>
-                  Our annual conference will be held in November, dedicated to "Science Beyond Borders."
-                  We invite the entire scientific community to join.
+                  A gathering of technology developers and researchers in the fields of oceanography, marine observatories, marine biology, and marine archaeology.
                 </Typography>
-                <Button variant="contained" component={RouterLink} to="/activities" aria-label="Read more about the annual conference">
-                  Read More
+                <Button variant="contained" href="https://bts.fer.hr/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about BTS’25 conference">
+                  Learn More
                 </Button>
               </CardContent>
             </Card>
@@ -117,13 +121,13 @@ const HomePage = () => {
       {/* Call-to-Action Section (Optional) */}
       <Box sx={{ textAlign: 'center', my: 6 }}>
         <Typography variant="h4" component="h2" gutterBottom>
-          Interested in participating or receiving a grant?
+          Interested in participating or collaborating with the TC?
         </Typography>
         <Button variant="contained" size="large" component={RouterLink} to="/contact" aria-label="Contact us for information">
           Contact Us Today!
         </Button>
       </Box>
-    </Box>
+    </Container>
   );
 };
 

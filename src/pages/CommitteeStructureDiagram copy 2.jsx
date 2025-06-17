@@ -14,27 +14,24 @@ const CommitteeStructureDiagram = ({ data }) => {
     const mainCommitteeName = Object.keys(data.committee_structure)[0];
     const subCommitteesData = data.committee_structure[mainCommitteeName];
 
-
+    // נגדיר כאן את גודל העמודות לתת-ועדות.
+    // 3 עמודות = md={4} (12 / 3 = 4)
+    // 4 עמודות = md={3} (12 / 4 = 3)
+    // נבחר ב-md={4} כדי להציג 3 עמודות כפי שהיה במקור ובצילום
     const subCommitteeGridSize = 4; // for 3 columns on medium screens and up
 
     return (
-        <Container maxWidth="lg" sx={{ backgroundColor: "#dedede", py: 4 }}>
-
+        <Container maxWidth="lg" sx={{ my: 4 }}>
 
             {/* Main Committee - always takes full width */}
             <Grid container spacing={isSmallScreen ? 2 : 4} justifyContent="center" sx={{ width: '100%', mb: isSmallScreen ? 2 : 4 }}>
-
-
-
-                <Grid justifyContent="center" item size={12}
-                    sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <CardMedia component="img" image="../src/assets/images/Group 16.png" alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 2 }} />
-                    <Typography variant="h5" component="h2" sx={{ color: '#072034', fontWeight: 'bold' }}>
-                        {mainCommitteeName} {/* "Technical Committee on Marine Metrology" */}
+              
+               <Grid justifyContent="center" item size={12}>
+                    <CardMedia component="img" image="../src/assets/images/Group 16.png" alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 1 }} />
+                    <Typography variant="h5" component="h3" gutterBottom sx={{ color: '#072034' }}>
+                        {mainCommitteeName}
                     </Typography>
                 </Grid>
-
-
 
                 {Object.entries(subCommitteesData).map(([subCommitteeName, topics], index) => (
                     <Grid item size={4} sm={6} md={subCommitteeGridSize} key={subCommitteeName}>
@@ -53,11 +50,7 @@ const CommitteeStructureDiagram = ({ data }) => {
                                 mb: isSmallScreen ? 1 : 2 // Margin bottom to separate from topics
                             }}>
                                 <CardContent sx={{ '&:last-child': { pb: 2 } }}>
-
-                                    <Typography component="h3"
-                                        variant={isSmallScreen ? "subtitle1" : (subCommitteeName.length > 25 ? "h7" : "h6")}
-                                        sx={{ mb: 0, fontWeight: 'bold', whiteSpace: 'normal', overflowWrap: 'break-word', hyphens: 'auto', }}
-                                    >
+                                    <Typography variant={isSmallScreen ? "subtitle1" : "h6"} component="h3" sx={{ mb: 0 }}>
                                         {subCommitteeName}
                                     </Typography>
                                 </CardContent>
@@ -71,7 +64,7 @@ const CommitteeStructureDiagram = ({ data }) => {
                                             <Card sx={{
                                                 backgroundColor: "#6fb9e6",
                                                 boxShadow: 1,
-                                                width: '100%',
+                                                width: '90%',
                                                 textAlign: 'center',
                                                 minHeight: '40px',
                                                 display: 'flex',

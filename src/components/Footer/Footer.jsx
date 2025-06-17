@@ -15,7 +15,7 @@ const Footer = () => (
       color: (theme) => theme.palette.text.secondary,
     }}
   >
-    <Container maxWidth="lg">
+    <Container >
       <Typography variant="body2" color="text.secondary">
         &copy; {new Date().getFullYear()} Grant Organization. All rights reserved.
       </Typography>

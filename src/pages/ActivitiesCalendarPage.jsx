@@ -22,30 +22,6 @@ const projects = [
     ],
     outcomes: "Developed a widely adopted framework for AI ethics, influencing policy recommendations and improving patient trust in AI-driven medical solutions.",
     status: "Completed (2023-2024)"
-  },
-  {
-    id: 2,
-    title: "Sustainable Agriculture Innovation Fund",
-    description: "A grant program supporting research into sustainable farming practices, drought-resistant crops, and eco-friendly pest control methods to enhance food security and environmental protection.",
-    goals: [
-      "Fund 15 new research projects in sustainable agriculture.",
-      "Facilitate knowledge exchange between researchers and farmers.",
-      "Promote the adoption of sustainable practices in rural communities."
-    ],
-    outcomes: "Successfully funded 18 projects, leading to the development of new crop varieties and a 15% reduction in water usage in pilot farms.",
-    status: "Ongoing (Launched 2024)"
-  },
-  {
-    id: 3,
-    title: "Youth STEM Mentorship Program",
-    description: "An initiative to connect high school students with leading researchers for mentorship, encouraging interest and participation in Science, Technology, Engineering, and Mathematics fields.",
-    goals: [
-      "Match 100 students with mentors annually.",
-      "Organize quarterly hands-on science workshops.",
-      "Increase female participation in STEM disciplines."
-    ],
-    outcomes: "Over 200 students has participated, with a significant increase in STEM university applications from program alumni, especially among underrepresented groups.",
-    status: "Ongoing (Launched 2022)"
   }
 ];
 
@@ -58,39 +34,6 @@ const calendarEvents = [
     end: moment("2025-07-20T12:00:00").toDate(),   // Use current year for events
     description: "A comprehensive guide for researchers on crafting compelling grant proposals. Q&A session included.",
     type: "Webinar"
-  },
-  {
-    id: 2,
-    title: "Annual Research Conference: 'Science Beyond Borders'",
-    start: moment("2025-08-05T09:00:00").toDate(), // Use current year for events
-    end: moment("2025-08-07T17:00:00").toDate(),   // Use current year for events
-    description: "Our flagship event featuring keynote speakers, poster sessions, and networking opportunities.",
-    type: "Conference",
-    allDay: true, // For multi-day events
-  },
-  {
-    id: 3,
-    title: "Workshop: Data Visualization for Researchers",
-    start: moment("2025-09-01T15:00:00").toDate(), // Use current year for events
-    end: moment("2025-09-01T17:00:00").toDate(),   // Use current year for events
-    description: "Hands-on workshop focusing on effective data visualization techniques using modern tools.",
-    type: "Workshop"
-  },
-  {
-    id: 4,
-    title: "Online Meetup: Quantum Computing Research",
-    start: moment("2025-10-10T11:00:00").toDate(), // Use current year for events
-    end: moment("2025-10-10T13:00:00").toDate(),   // Use current year for events
-    description: "An informal discussion and networking event for researchers interested in the latest advancements.",
-    type: "Meeting"
-  },
-  {
-    id: 5,
-    title: "New Grant Opportunity Announcement",
-    start: moment("2025-06-25T09:00:00").toDate(),
-    end: moment("2025-06-25T09:30:00").toDate(),
-    description: "Official announcement of the new 'Environmental Impact Research Grant'.",
-    type: "Announcement"
   }
 ];
 // --- End Static Data ---

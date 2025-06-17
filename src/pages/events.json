@@ -1,0 +1,16 @@
+[
+    {
+        "name": "BTS’25 Conference",
+        "time": "Nov 9-16, 2025,",
+        "location": "Limassol, Cyprus",
+        "description": "A gathering of technology developers and researchers in the fields of oceanography, marine observatories, marine biology, and marine archaeology.",
+        "link": "https://marinetech.github.io/Tech4Bio2025.github.io"
+    },
+    {
+        "name": "Tech4Bio Conference",
+        "time": "Oct. 21-23, 2025",
+        "location": "Haifa, Israel",
+        "description": "Dedicated to the development of acoustic sensors for marine biology applications.",
+        "link": "https://bts.fer.hr/"
+    }
+]

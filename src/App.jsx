@@ -33,8 +33,8 @@ function App() {
     <Router basename="/">
       <CssBaseline />
       <Header />
-      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-        <Routes>
+      <Container  sx={{maxWidth: 'none', width:"100%"}}>
+      <Routes>
           {appRoutes.map((route) => (
             // Using route.path as key for stable rendering of routes
             <Route key={route.path} path={route.path} element={route.element} />
