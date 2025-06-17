@@ -110,7 +110,7 @@ const Header = () => {
           aria-label="Organization home page"
           sx={{ display: 'flex', alignItems: 'center', mr: 'auto', color: 'black' }} // Ensure link text is black too
         >
-          <CardMedia component="img" image="../src/assets/images/icesLogo.png" alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 1 }} />
+          <CardMedia component="img" image="../../src/assets/images/icesLogo.png" alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 1 }} />
 
         </Link>
       </Toolbar>
