@@ -18,6 +18,8 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import icesLogo from "../../assets/images/icesLogo.png";
+//C:\Users\ipewz\Desktop\WORK_HAIFA\TC\src\assets\images\icesLogo.png
 
 const navLinks = [
   { "button_name": "Home", "to": "/TC/", "aria_label": "Navigate to Home page." },
@@ -110,7 +112,7 @@ const Header = () => {
           aria-label="Organization home page"
           sx={{ display: 'flex', alignItems: 'center', mr: 'auto', color: 'black' }} // Ensure link text is black too
         >
-          <CardMedia component="img" image="./assets/images/icesLogo.png" alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 1 }} />
+          <CardMedia component="img" image={icesLogo} alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 1 }} />
 
         </Link>
       </Toolbar>
