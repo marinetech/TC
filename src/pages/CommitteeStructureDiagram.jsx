@@ -7,7 +7,6 @@ const CommitteeStructureDiagram = ({ data }) => {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-    // לוודא ש-data.committee_structure קיים ולא ריק
     if (!data || !data.committee_structure || Object.keys(data.committee_structure).length === 0) {
         return <Typography variant="h6" color="error">No committee data available.</Typography>;
     }
@@ -37,8 +36,8 @@ const CommitteeStructureDiagram = ({ data }) => {
 
 
 
-                {Object.entries(subCommitteesData).map(([subCommitteeName, topics], index) => (
-                    <Grid item size={4} sm={6} md={subCommitteeGridSize} key={subCommitteeName}>
+                {Object.entries(subCommitteesData).map(([subCommitteeName, topics], index ) => (
+                    <Grid  item size={4} sm={6} md={subCommitteeGridSize} key={subCommitteeName}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
                             {/* Card for Sub-Committee Name */}
                             <Card sx={{

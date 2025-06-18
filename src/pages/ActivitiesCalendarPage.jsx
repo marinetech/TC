@@ -1,10 +1,13 @@
 // src/pages/ActivitiesPage.jsx
-import React from 'react';
-import { Box, Typography, Container, Grid, Card, CardContent, List, ListItem, ListItemText, Divider } from '@mui/material';
-
-// Import for React Big Calendar
+import * as React from 'react';
+import { Box, Typography, Container, Grid, IconButton, CardContent, List, ListItem, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Slide, Divider } from '@mui/material';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment'; // Make sure moment is imported
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 // Initialize the localizer for React Big Calendar
 const localizer = momentLocalizer(moment);
@@ -37,90 +40,76 @@ const calendarEvents = [
   }
 ];
 // --- End Static Data ---
+const EventComponent = ({ event }) => (
+  <Box>
+    <strong>{event.title}</strong>
+    {event.description && <p>{event.description}</p>}
+    {event.type && <small>({event.type})</small>}
+  </Box>
+);
 
 const ActivitiesCalendarPage = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => { setOpen(true); };
+  const handleClose = () => { setOpen(false); };
+
   // Optional: Function to customize event display in the calendar
-  const EventComponent = ({ event }) => (
-    <Box>
-      <strong>{event.title}</strong>
-      {event.description && <p>{event.description}</p>}
-      {event.type && <small>({event.type})</small>}
-    </Box>
-  );
+
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
-      {/* Section: Our Projects */}
-      <Box sx={{ mb: 6 }}>
-        <Typography variant="h3" component="h1" align="center" gutterBottom>
-          Our Projects & Initiatives
-        </Typography>
-        <Typography variant="h6" align="center" color="text.secondary" sx={{ mb: 4 }}>
-          Discover the impactful research and community-driven initiatives supported by our organization.
-        </Typography>
+    <React.Fragment>
 
-        <Grid container spacing={4}>
-          {projects.map((project) => (
-            <Grid item xs={12} md={6} key={project.id}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography variant="h5" component="h2" gutterBottom>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                    Status: {project.status}
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    **Description:** {project.description}
-                  </Typography>
-                  <Typography variant="body1" sx={{ mt: 2 }}>
-                    **Goals:**
-                  </Typography>
-                  <Box component="ul" sx={{ pl: 2, mt: 0 }}>
-                    {project.goals.map((goal, index) => (
-                      <li key={index}>
-                        <Typography variant="body1">{goal}</Typography>
-                      </li>
-                    ))}
-                  </Box>
-                  <Typography variant="body1" sx={{ mt: 2 }}>
-                    **Outcomes:** {project.outcomes}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
 
-      {/* Section: Events Calendar (Updated to React Big Calendar) */}
-      <Box sx={{ my: 6, minHeight: '600px' }}> {/* minHeight is important for calendar visibility */}
-        <Typography variant="h3" component="h1" align="center" gutterBottom>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',mx:5, my: 2,p:2,borderRadius:"50px", backgroundColor: '#dedede' }}>
+        <Typography variant="h6" component="h1" align="center" gutterBottom>
           Upcoming Events Calendar
         </Typography>
-        <Typography variant="h6" align="center" color="text.secondary" sx={{ mb: 4 }}>
+        <Typography variant="h7" align="center" color="text.secondary" sx={{ mb: 4 }}>
           Explore our schedule of workshops, conferences, and webinars.
         </Typography>
-
-        <Calendar
-          localizer={localizer}
-          events={calendarEvents}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 600 }} // Set a fixed height for the calendar
-          defaultView="month" // Default view when the calendar loads
-          views={['month', 'week', 'day', 'agenda']} // Available views
-          components={{
-            event: EventComponent, // Use custom component for event display
-          }}
-          // Optional: Event click handler
-          onSelectEvent={event => alert(`Event: ${event.title}\nDescription: ${event.description}`)}
-          // Optional: Navigate to current date on load
-          defaultDate={moment().toDate()}
-        />
+        <Button variant="contained" endIcon={<CalendarMonthIcon />} onClick={handleClickOpen} sx={{ borderRadius: '20px', px: 4, py: 1.5 }}>
+          Calendar
+        </Button>
       </Box>
-    </Container>
+
+      <Dialog open={open} slots={{ transition: Transition, }} keepMounted onClose={handleClose} aria-describedby="alert-dialog-slide-description">
+
+        <DialogTitle>{"Upcoming Events Calendar"}</DialogTitle>
+
+        <DialogContent>
+          <DialogContentText id="calendar-dialog-slide-description">
+            <Box sx={{ my: 6, minHeight: '600px' }}> {/* minHeight is important for calendar visibility */}
+
+              <Calendar
+                localizer={localizer}
+                events={calendarEvents}
+                startAccessor="start"
+                endAccessor="end"
+                style={{ height: 600 }} // Set a fixed height for the calendar
+                defaultView="month" // Default view when the calendar loads
+                views={['month', 'week', 'day', 'agenda']} // Available views
+                components={{ event: EventComponent, }} // Use custom component for event display
+                // Optional: Event click handler
+                onSelectEvent={event => alert(`Event: ${event.title}\nDescription: ${event.description}`)}
+                // Optional: Navigate to current date on load
+                defaultDate={moment().toDate()}
+              />
+            </Box>
+            
+          </DialogContentText>
+        </DialogContent>
+
+        <DialogActions>
+          <Button onClick={handleClose}>Close</Button>
+        </DialogActions>
+
+      </Dialog>
+    </React.Fragment>
   );
-};
+}
+
+
+
+
 
 export default ActivitiesCalendarPage;

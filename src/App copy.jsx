@@ -8,32 +8,38 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-// Import pages - רק HomePage יישאר כדף ראשי
+// Import pages
 import HomePage from './pages/HomePage';
-// נשאיר את אלה רק אם הם חייבים להיות דפים נפרדים ולא קטעים ב-HomePage
+import ContactPage from './pages/ContactPage';
+import ActivitiesPage from './pages/ActivitiesPage';
+import MembershipPage from './pages/MembershipPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import ActivitiesCalendarPage from './pages/ActivitiesCalendarPage';
 import AccessibilityStatementPage from './pages/AccessibilityStatementPage';
 
-// הגדר את המסלולים.
-// שימו לב ש-Activities, Membership, Contact, Activities_Calendar יהיו כעת חלק מ-HomePage
-// ונווט אליהם באמצעות גלילה ל-ID
+
+// Define the application routes
 const appRoutes = [
   { path: "/TC/", element: <HomePage /> },
+  { path: "/TC/contact", element: <ContactPage /> },
+  { path: "/TC/activities", element: <ActivitiesPage /> },
+  { path: "/TC/membership", element: <MembershipPage /> },
   { path: "/TC/privacy-policy", element: <PrivacyPolicyPage /> },
   { path: "/TC/accessibility-statement", element: <AccessibilityStatementPage /> },
+  { path: "/TC/Activities_Calendar", element: <ActivitiesCalendarPage /> },
 ];
 
 function App() {
   return (
-    <Router basename="/"> {/* חשוב להגדיר את basename ל-GitHub Pages */}
+    <Router basename="/">
       <CssBaseline />
       <Header />
-      <Container sx={{ maxWidth: 'none', width: "100%" }}>
-        <Routes>
+      <Container  sx={{maxWidth: 'none', width:"100%"}}>
+      <Routes>
           {appRoutes.map((route) => (
+            // Using route.path as key for stable rendering of routes
             <Route key={route.path} path={route.path} element={route.element} />
           ))}
-          {/* ניתן להוסיף כאן מסלול לטיפול ב-404 אם צריך */}
         </Routes>
       </Container>
       <Footer />

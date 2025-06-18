@@ -1,10 +1,16 @@
 import React from 'react';
-import { Box, Typography, Container, CardActions, CardActionArea, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import CommitteeStructureDiagram from './CommitteeStructureDiagram';  
-import { committeeStructureData } from './committeeData';  
-import events from './events.json';
+import { Box, Typography, Container, Stack, CardActions, CardActionArea, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { CenterFocusStrong } from '@mui/icons-material';
+import { committeeStructureData } from './committeeData';
+import CommitteeStructureDiagram from './CommitteeStructureDiagram';
+import ContactPage from './ContactPage';
+import MembershipPage from './MembershipPage';
+
+
+import ActivitiesCalendarPage from './ActivitiesCalendarPage';
+
+import events from './events.json';
 
 import wave_img from "../assets/images/wave_img.png";
 import DJI_0070 from "../assets/images/DJI_0070.png";
@@ -14,14 +20,15 @@ import MaskGroup2 from "../assets/images/Mask Group 2.png";
 import MaskGroup4 from "../assets/images/Mask Group 4.png";
 import MaskGroup5 from "../assets/images/Mask Group 5.png";
 
+
 const HomePage = () => {
   return (
-    <Container  disableGutters  sx={{maxWidth: 'none', width:"100%"}}>
-    
+    <Container disableGutters sx={{ maxWidth: 'none', width: "100%" }}>
+
       {/* Hero Section - Mission, Vision, and Objectives */}
 
 
-      <Card sx={{ borderRadius: 0, position: 'relative', mb: 4, }}>
+      <Card sx={{ borderRadius: 0, position: 'relative', mb: 4, }} id="home">
         <CardMedia
           component="img"
           image={MaskGroup1} // Use the imported image
@@ -64,10 +71,10 @@ const HomePage = () => {
 
       {/* Diagram Embedding - Using the new dynamic component */}
 
-      <CommitteeStructureDiagram data={committeeStructureData} />
+      <CommitteeStructureDiagram data={committeeStructureData} id="committee-structure" />
 
 
-      <Grid container spacing={4} justifyContent="center" sx={{ backgroundColor: "white", pt: 4 }}>
+      <Grid container spacing={4} justifyContent="center" sx={{ backgroundColor: "white", pt: 4 }} id="activities">
 
 
         <Grid item xs={12} md={4}>
@@ -117,36 +124,31 @@ const HomePage = () => {
 
       </Grid>
 
-      <Grid item xs={12}   >
+      <Grid item xs={12}>
 
         <Card sx={{ padding: 4, height: '100%', display: 'flex', flexDirection: 'column', backgroundColor: "#072034" }}>
           <Typography variant="h5" component="h3" gutterBottom sx={{ mb: 4, textAlign: "center", color: 'white', fontWeight: 'bold' }}>
             Key Objectives
           </Typography>
-          <Grid container spacing={2} justifyContent="center" sx={{ mb: 3, display: 'flex', flexDirection: 'row' }}>
-            <Grid item xs={4}>
-              <CardMedia component="img" image={DJI_0070} alt="Organization Logo" sx={{ height: 150 }} />
-            </Grid>
-            <Grid item xs={4}>
-              <CardMedia component="img" image={MaskGroup2} alt="Organization Logo" sx={{ height: 150 }} />
-            </Grid>
-            <Grid item xs={4}>
-              <CardMedia component="img" image={NVO04615} alt="Organization Logo" sx={{ height: 150 }} />
-            </Grid>
-          </Grid>
+
+          <Stack sx={{ p: 3 }} direction={{ xs: 'row', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }}>
+            <CardMedia component="img" image={DJI_0070} alt="Organization Logo" sx={{ height: { xs: 50, sm: 100, md: 150 }, }} />
+            <CardMedia component="img" image={MaskGroup2} alt="Organization Logo" sx={{ height: { xs: 50, sm: 100, md: 150 }, }} />
+            <CardMedia component="img" image={NVO04615} alt="Organization Logo" sx={{ height: { xs: 50, sm: 100, md: 150 }, }} />
+          </Stack>
 
           <CardContent>
-
             <Typography variant="body1" sx={{ color: 'white' }}>
               Promoting through funding interdisciplinary activities via conferences, invited talks, joint courses, and data sharing. Our fields of interest include: establishing standardized procedures for oceanic measurements and quality assurance/quality control frameworks; addressing metrology challenges in extreme marine environments; promoting best practices in marine instrument design, development, and testing; promoting robust signal processing techniques and AI-driven solutions for sensor data calibration and analysis; establishing calibration protocols and reference standards; enabling error correction and uncertainty analysis; developing sensor synchronization techniques; assessing long-term stability of underwater sensors; supporting development and evaluation of ocean measurement platforms; and facilitating application of ocean measurement technology to scientific research.
             </Typography>
           </CardContent>
+
         </Card>
       </Grid>
 
 
       {/* Initiatives and News Section */}
-      <Box sx={{ my: 6 }}>
+      <Box sx={{ my: 6 }} id="activities-calendar">
 
 
         <Grid justifyContent="center" item size={12} sx={{ pb: 4, paddingTop: 0, display: 'flex' }}>
@@ -160,7 +162,7 @@ const HomePage = () => {
           {events.map((event, i) => (
 
 
-            <Card sx={{ maxWidth: 380, backgroundColor: "#7fc9f6", borderRadius: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <Card key={i} sx={{ maxWidth: 380, backgroundColor: "#7fc9f6", borderRadius: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <CardActionArea >
                 <CardContent sx={{ paddingBottom: 0 }}>
 
@@ -186,18 +188,27 @@ const HomePage = () => {
 
           ))}
         </Grid>
+        <ActivitiesCalendarPage />
       </Box>
 
       {/* Call-to-Action Section (Optional) */}
       <Box item size={12} sx={{ paddingTop: 0, backgroundColor: "#072034", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Typography variant="h5" component="h2" gutterBottom sx={{color:"white", fontWeight: 'bold', bx: 2 }}>
+        <Typography variant="h5" component="h2" gutterBottom sx={{ color: "white", fontWeight: 'bold', bx: 2 }}>
           Interested in participating or collaborating with the TC?
         </Typography>
 
-        <Button variant="contained" size="madium" component={RouterLink} to="/contact" aria-label="Contact us for information" sx={{ fontWeight: 'bold', borderRadius: '30px',m:4, px: 2, py: 2 }}>
+        <Button variant="contained" size="madium" component={RouterLink} to="/contact" aria-label="Contact us for information" sx={{ fontWeight: 'bold', borderRadius: '30px', m: 4, px: 2, py: 2 }}>
           Contact Us Today!
         </Button>
       </Box>
+      
+      <Card sx={{ borderRadius: 0, position: 'relative', mb: 4, }} id="membership">
+      <MembershipPage/>
+      </Card>
+
+      <Card sx={{ borderRadius: 0, position: 'relative', mb: 4, }} id="contact">
+      <ContactPage  />
+      </Card>
 
     </Container >
   );

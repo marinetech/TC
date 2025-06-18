@@ -23,7 +23,7 @@ const ContactPage = () => {
                 Has an event related to TC Metrology? Looking for funding?
             </Typography>
             <Typography variant="h5" align="center" sx={{ mb: 1 }}>  Please fill your inquiry in
-                this link: <Link href="https://docs.google.com/forms/d/e/1FAIpQLScPWz4l45XrDKrXaAfHH8je879FIZPX24Kt_bIsQhMA4jNGew/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Google Form</Link>.
+                this <Link href="https://docs.google.com/forms/d/e/1FAIpQLScPWz4l45XrDKrXaAfHH8je879FIZPX24Kt_bIsQhMA4jNGew/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Form</Link>.
             </Typography>
             <Typography variant="h6" align="left" sx={{ marginInlineStart: 10, mt: 4, mb: 1 }}> {/* New Typography for the direct contact line */}
                 You can also contact us directly:
