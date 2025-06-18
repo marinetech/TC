@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, CardMedia, Typography, Container, Grid, Card, CardContent } from '@mui/material';
 import { useTheme, useMediaQuery } from '@mui/material';
+import wave_img from "../assets/images/wave_img.png";
 
 const CommitteeStructureDiagram = ({ data }) => {
     const theme = useTheme();
@@ -28,7 +29,7 @@ const CommitteeStructureDiagram = ({ data }) => {
 
                 <Grid justifyContent="center" item size={12}
                     sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <CardMedia component="img" image="../src/assets/images/Group 16.png" alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 2 }} />
+                    <CardMedia component="img" image={wave_img} alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 2 }} />
                     <Typography variant="h5" component="h2" sx={{ color: '#072034', fontWeight: 'bold' }}>
                         {mainCommitteeName} {/* "Technical Committee on Marine Metrology" */}
                     </Typography>
