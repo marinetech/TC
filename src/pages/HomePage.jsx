@@ -5,6 +5,15 @@ import CommitteeStructureDiagram from './CommitteeStructureDiagram';
 import { committeeStructureData } from './committeeData';  
 import events from './events.json';
 import { CenterFocusStrong } from '@mui/icons-material';
+
+import wave_img from "../assets/images/wave_img.png";
+import DJI_0070 from "../assets/images/DJI_0070.png";
+import NVO04615 from "../assets/images/NVO04615.png";
+import MaskGroup1 from "../assets/images/Mask Group 1.png";
+import MaskGroup2 from "../assets/images/Mask Group 2.png";
+import MaskGroup4 from "../assets/images/Mask Group 4.png";
+import MaskGroup5 from "../assets/images/Mask Group 5.png";
+
 const HomePage = () => {
   return (
     <Container  disableGutters  sx={{maxWidth: 'none', width:"100%"}}>
@@ -15,7 +24,7 @@ const HomePage = () => {
       <Card sx={{ borderRadius: 0, position: 'relative', mb: 4, }}>
         <CardMedia
           component="img"
-          image={"../src/assets/images/Mask Group 1.png"} // Use the imported image
+          image={MaskGroup1} // Use the imported image
           alt="Two buoys in the ocean, symbolizing marine research." // Good alt text for accessibility
           sx={{
             height: { xs: 300, sm: 400, md: 500 }, // Responsive height for the image
@@ -65,11 +74,11 @@ const HomePage = () => {
 
           <Card sx={{ paddingLeft: 2, height: '100%', display: 'flex' }}>
 
-            <CardMedia component="img" sx={{ width: 151 }} image="../src/assets/images/Mask Group 4.png" alt="Live from space album cover" />
+            <CardMedia component="img" sx={{ width: 151 }} image={MaskGroup4} alt="Live from space album cover" />
             <CardContent>
 
               <Grid justifyContent="left" item size={12} sx={{ paddingTop: 2, display: 'flex' }}>
-                <CardMedia component="img" image="../src/assets/images/Group 16.png"
+                <CardMedia component="img" image={wave_img}
                   alt="Organization Logo" sx={{ height: 30, width: 'auto', maxWidth: '100%', mr: 2 }} />
                 <Typography variant="h5" component="h2" sx={{ color: '#072034', fontWeight: 'bold' }}>
                   Our Mission
@@ -88,11 +97,11 @@ const HomePage = () => {
 
           <Card sx={{ paddingLeft: 2, height: '100%', display: 'flex' }}>
 
-            <CardMedia component="img" sx={{ width: 151 }} image="../src/assets/images/Mask Group 5.png" alt="Live from space album cover" />
+            <CardMedia component="img" sx={{ width: 151 }} image={MaskGroup5} alt="Live from space album cover" />
             <CardContent>
 
               <Grid justifyContent="left" item size={12} sx={{ paddingTop: 2, display: 'flex' }}>
-                <CardMedia component="img" image="../src/assets/images/Group 16.png"
+                <CardMedia component="img" image={wave_img}
                   alt="Organization Logo" sx={{ height: 30, width: 'auto', maxWidth: '100%', mr: 2 }} />
                 <Typography variant="h5" component="h2" sx={{ color: '#072034', fontWeight: 'bold' }}>
                   Our Vision
@@ -116,13 +125,13 @@ const HomePage = () => {
           </Typography>
           <Grid container spacing={2} justifyContent="center" sx={{ mb: 3, display: 'flex', flexDirection: 'row' }}>
             <Grid item xs={4}>
-              <CardMedia component="img" image="../src/assets/images/DJI_0070.png" alt="Organization Logo" sx={{ height: 150 }} />
+              <CardMedia component="img" image={DJI_0070} alt="Organization Logo" sx={{ height: 150 }} />
             </Grid>
             <Grid item xs={4}>
-              <CardMedia component="img" image="../src/assets/images/Mask Group 2.png" alt="Organization Logo" sx={{ height: 150 }} />
+              <CardMedia component="img" image={MaskGroup2} alt="Organization Logo" sx={{ height: 150 }} />
             </Grid>
             <Grid item xs={4}>
-              <CardMedia component="img" image="../src/assets/images/NVO04615.png" alt="Organization Logo" sx={{ height: 150 }} />
+              <CardMedia component="img" image={NVO04615} alt="Organization Logo" sx={{ height: 150 }} />
             </Grid>
           </Grid>
 
@@ -141,7 +150,7 @@ const HomePage = () => {
 
 
         <Grid justifyContent="center" item size={12} sx={{ pb: 4, paddingTop: 0, display: 'flex' }}>
-          <CardMedia component="img" image="../src/assets/images/Group 16.png" alt="Organization Logo" sx={{ height: 30, width: 'auto', maxWidth: '100%', mr: 2 }} />
+          <CardMedia component="img" image={wave_img} alt="Organization Logo" sx={{ height: 30, width: 'auto', maxWidth: '100%', mr: 2 }} />
           <Typography variant="h5" component="h2" sx={{ color: '#072034', fontWeight: 'bold' }}>
             Highlights of Key Initiatives & Upcoming Events
           </Typography>
