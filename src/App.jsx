@@ -8,17 +8,15 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-// Import pages - רק HomePage יישאר כדף ראשי
-import HomePage from './pages/HomePage';
+// Import pages - רק MainPage יישאר כדף ראשי
+import MainPage from './pages/MainPage';
 // נשאיר את אלה רק אם הם חייבים להיות דפים נפרדים ולא קטעים ב-HomePage
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import AccessibilityStatementPage from './pages/AccessibilityStatementPage';
 
-// הגדר את המסלולים.
-// שימו לב ש-Activities, Membership, Contact, Activities_Calendar יהיו כעת חלק מ-HomePage
-// ונווט אליהם באמצעות גלילה ל-ID
+
 const appRoutes = [
-  { path: "/TC/", element: <HomePage /> },
+  { path: "/TC/", element: <MainPage /> },
   { path: "/TC/privacy-policy", element: <PrivacyPolicyPage /> },
   { path: "/TC/accessibility-statement", element: <AccessibilityStatementPage /> },
 ];

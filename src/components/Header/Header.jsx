@@ -22,10 +22,11 @@ import icesLogo from "../../assets/images/icesLogo.png";
 
 const navLinks = [
   { "button_name": "Home", "to": "/TC/#home", "aria_label": "Navigate to Home section." },
+  { "button_name": "committee", "to": "/TC/#committee_structure", "aria_label": "Navigate to committee-structure section." },
+  { "button_name": "About US", "to": "/TC/#About_US", "aria_label": "Navigate to About_US section." },
   { "button_name": "Activities", "to": "/TC/#activities", "aria_label": "Navigate to Activities and Initiatives section." },
   { "button_name": "Membership", "to": "/TC/#membership", "aria_label": "Navigate to Membership section." },
   { "button_name": "Contact", "to": "/TC/#contact", "aria_label": "Navigate to Contact section." },
-  { "button_name": "Activities Calendar", "to": "/TC/#activities-calendar", "aria_label": "Activities Calendar Section." }
 ];
 
 const Header = () => {
