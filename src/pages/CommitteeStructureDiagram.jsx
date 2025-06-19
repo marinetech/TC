@@ -2,8 +2,10 @@ import React from 'react';
 import { Box, CardMedia, Typography, Container, Grid, Card, CardContent } from '@mui/material';
 import { useTheme, useMediaQuery } from '@mui/material';
 import wave_img from "../assets/images/wave_img.png";
+import { committeeStructureData } from './committeeData';
 
-const CommitteeStructureDiagram = ({ data }) => {
+const CommitteeStructureDiagram = () => {
+    const data = committeeStructureData;
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -25,7 +27,7 @@ const CommitteeStructureDiagram = ({ data }) => {
 
 
                 <Grid justifyContent="center" item size={12}
-                    sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center',mb:{xs: 1 ,sm: 4,md:0,lg:0} }}>
+                    sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: { xs: 1, sm: 4, md: 0, lg: 0 } }}>
 
                     <CardMedia component="img" image={wave_img} alt="Organization Logo" sx={{
                         height: { xs: 15, sm: 25, md: 30, lg: 40 }, width: 'auto', maxWidth: '100%', mr: 2,

@@ -13,31 +13,41 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const ContactPage = () => {
     return (
-        <Container maxWidth="md" sx={{ py: 4 }}>
+        <Container maxWidth="md" sx={{ py: 4 }} id="contact">
 
             <Typography variant="h2" component="h1" align="center" gutterBottom>
                 Contact
             </Typography>
 
-            <Typography variant="h5" align="center" sx={{ mb: 1 }}> {/* Reduced mb here */}
-                Has an event related to TC Metrology? Looking for funding?
+            <Typography variant="h5" align="center" sx={{
+                fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
+                mb: 1
+            }}>
+                Has an event related to TC Metrology? Looking for funding? <br />
+                Please fill your inquiry in this <Link href="https://docs.google.com/forms/d/e/1FAIpQLScPWz4l45XrDKrXaAfHH8je879FIZPX24Kt_bIsQhMA4jNGew/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Form</Link>.
             </Typography>
-            <Typography variant="h5" align="center" sx={{ mb: 1 }}>  Please fill your inquiry in
-                this <Link href="https://docs.google.com/forms/d/e/1FAIpQLScPWz4l45XrDKrXaAfHH8je879FIZPX24Kt_bIsQhMA4jNGew/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Form</Link>.
-            </Typography>
-            <Typography variant="h6" align="left" sx={{ marginInlineStart: 10, mt: 4, mb: 1 }}> {/* New Typography for the direct contact line */}
-                You can also contact us directly:
-            </Typography>
+
+
+
             {/*
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPWz4l45XrDKrXaAfHH8je879FIZPX24Kt_bIsQhMA4jNGew/viewform?embedded=true" width="640" height="1092" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             */}
+
             <Grid container spacing={4} justifyContent="center">
 
                 {/* Contact Information */}
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12} md={8}>  <Typography variant="h6" align="left" sx={{
+                    fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
+                    mt: 4, mb: 1
+                }}>
+                    You can also contact us directly:
+                </Typography>
                     <Card sx={{ height: '100%' }}>
                         <CardContent>
-                            <Typography variant="h5" component="h2" gutterBottom>
+                            <Typography variant="h5" component="h2" gutterBottom sx={{
+                                fontSize: { xs: '1.2rem', sm: '1.25rem', md: '1.5rem' },
+
+                            }}>
                                 Direct Contacts
                             </Typography>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>

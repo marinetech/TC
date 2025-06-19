@@ -54,9 +54,9 @@ const UpcomingEventsPage = () => {
             modules={[Pagination, Navigation]}
             className="mySwiper"
             breakpoints={{
-              900: { slidesPerView: 2,},
-              1275: { slidesPerView: 3, },
-              1700: { slidesPerView: Math.min(events.length, 4), },
+              900: { slidesPerView: 2,centerInsufficientSlides: true},
+              1275: { slidesPerView: 3, centerInsufficientSlides: true},
+              1700: { slidesPerView: Math.min(events.length, 4),centerInsufficientSlides: true },
             }}
 
           >
