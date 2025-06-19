@@ -18,13 +18,21 @@ const CommitteeStructureDiagram = () => {
     const subCommitteeGridSize = 4; // for 3 columns on medium screens and up
 
     return (
-        <Container maxWidth="lg" sx={{ backgroundColor: "#dedede", py: { sm: 4, xs: 1 } }} id="committee_structure">
 
+        <React.Fragment >
 
             {/* Main Committee - always takes full width */}
-            <Grid container spacing={isSmallScreen ? 0.5 : 4} justifyContent="center" sx={{ width: '100%', mb: isSmallScreen ? 2 : 4 }}>
-
-
+            <Grid
+                id="committee_structure"
+                container
+                spacing={isSmallScreen ? 0.5 : 4}
+                justifyContent="center"
+                sx={{
+                    backgroundColor: "#dedede",
+                    p: { sm: 4, xs: 1 },
+                    width: '100%',
+                    mb: isSmallScreen ? 2 : 4
+                }}>
 
                 <Grid justifyContent="center" item size={12}
                     sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: { xs: 1, sm: 4, md: 0, lg: 0 } }}>
@@ -128,7 +136,7 @@ const CommitteeStructureDiagram = () => {
                     </Grid>
                 ))}
             </Grid>
-        </Container >
+        </React.Fragment>
     );
 };
 

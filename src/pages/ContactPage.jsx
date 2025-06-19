@@ -19,9 +19,10 @@ const ContactPage = () => {
                 Contact
             </Typography>
 
-            <Typography variant="h5" align="center" sx={{
+            <Typography variant="h3" align="center" sx={{
                 fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
-                mb: 1
+                mb: 1,
+                color: 'black',
             }}>
                 Has an event related to TC Metrology? Looking for funding? <br />
                 Please fill your inquiry in this <Link href="https://docs.google.com/forms/d/e/1FAIpQLScPWz4l45XrDKrXaAfHH8je879FIZPX24Kt_bIsQhMA4jNGew/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Form</Link>.

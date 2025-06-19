@@ -26,10 +26,9 @@ import { Pagination, Navigation } from 'swiper/modules';
 const UpcomingEventsPage = () => {
   return (
     <React.Fragment>
-      {/* Initiatives and News Section */}
-      <Box sx={{ my: 6 }} id="activities">
+       <Box sx={{ my: 6 }} id="activities">
 
-        <Grid justifyContent="center" item size={12} sx={{ pb: 0, paddingTop: 0, display: 'flex' }}>
+        <Grid justifyContent="center" item size={12} sx={{ px: 1, paddingTop: 0, display: 'flex' }}>
           <CardMedia component="img" image={wave_img} alt="Organization Logo" sx={{ height: 30, width: 'auto', maxWidth: '100%', mr: 2 }} />
           <Typography
             variant="h5"
@@ -76,11 +75,10 @@ const UpcomingEventsPage = () => {
                     <CardContent sx={{ paddingBottom: 0, p: { xs: 1.5, sm: 2 } }}> {/* Responsive padding */}
                       <Typography
                         variant="body2"
-                        color="text.secondary"
+                        color="black"
                         sx={{
                           textAlign: "center",
                           mb: { xs: 0.5, sm: 1 },
-                          fontWeight: 'bold',
                           fontSize: { xs: '0.75rem', sm: '0.875rem' } // Responsive font size for body2
                         }}
                       >
@@ -91,6 +89,7 @@ const UpcomingEventsPage = () => {
                         variant="h5"
                         sx={{
                           textAlign: "center",
+                          color: 'black',
                           fontWeight: 'bold',
                           fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' } // Responsive font size for h5
                         }}
@@ -101,7 +100,7 @@ const UpcomingEventsPage = () => {
                         variant="body2"
                         sx={{
                           textAlign: "center",
-                          color: 'text.secondary',
+                          color: 'black',
                           fontWeight: 'bold',
                           fontSize: { xs: '0.7rem', sm: '0.8rem' } // Responsive font size for description
                         }}

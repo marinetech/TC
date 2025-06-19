@@ -54,8 +54,7 @@ const Header = () => {
               to={link.to}
               aria-label={link.aria_label}
               sx={{ textAlign: 'center' }}
-              // אופציונלי: הגדרת offset כדי שהכותרת לא תוסתר על ידי ה-AppBar
-              scroll={el => scrollWithOffset(el, 64)} // 64px כדוגמה לגובה AppBar
+              scroll={el => scrollWithOffset(el, 84)} // 84px כדוגמה לגובה AppBar
             >
               <ListItemText primary={link.button_name} />
             </ListItemButton>
@@ -99,7 +98,7 @@ const Header = () => {
               to={link.to}
               aria-label={link.aria_label}
               // אופציונלי: הגדרת offset
-              scroll={el => scrollWithOffset(el, 64)}
+              scroll={el => scrollWithOffset(el, 84)}
             >
               {link.button_name}
             </Button>
@@ -113,7 +112,7 @@ const Header = () => {
           underline="none"
           aria-label="Organization home page"
           sx={{ display: 'flex', alignItems: 'center', mr: 'auto', color: 'black' }}
-          scroll={el => scrollWithOffset(el, 0)} // גלילה לראש הדף ללא offset
+          scroll={el => scrollWithOffset(el, 84)} // גלילה לראש הדף ללא offset
         >
           <CardMedia component="img" image={icesLogo} alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 1 }} />
         </Link>

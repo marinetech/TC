@@ -26,14 +26,15 @@ function App() {
     <Router basename="/"> {/* חשוב להגדיר את basename ל-GitHub Pages */}
       <CssBaseline />
       <Header />
-      <Container sx={{ maxWidth: 'none', width: "100%" }}>
+    <React.Fragment>
+
         <Routes>
           {appRoutes.map((route) => (
             <Route key={route.path} path={route.path} element={route.element} />
           ))}
           {/* ניתן להוסיף כאן מסלול לטיפול ב-404 אם צריך */}
         </Routes>
-      </Container>
+          </React.Fragment>
       <Footer />
     </Router>
   );

@@ -75,9 +75,9 @@ const membershipInterests = [
 
 const MembershipPage = () => {
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }} id="membership">
-      {/* Hero Section */}
-      <Box sx={{ py: 6, px: 2, textAlign: 'center', backgroundColor: (theme) => theme.palette.grey[100], borderRadius: 2, mb: 6, }}>
+    <React.Fragment>
+ 
+      <Box id="membership" sx={{ py: 6, px: 2, textAlign: 'center', backgroundColor: (theme) => theme.palette.grey[100], borderRadius: 2, mb: 6, }}>
         <Typography variant="h3" component="h1" fontWeight="bold" gutterBottom
           sx={{ mb: 4, fontSize: { xs: '1.5rem', sm: '1.25rem', md: '1.5rem' } }}>
           Join the Marine Metrology TC Community
@@ -92,7 +92,7 @@ const MembershipPage = () => {
       </Box>
 
       {/* Areas of Interest Section */}
-      <Box sx={{ mb: 6 }}>
+      <Box sx={{ mb: 6,px:4 }}>
         <Typography variant="h4" component="h2" align="center" fontWeight="bold" gutterBottom sx={{
           mb: 4,
           fontSize: { xs: '1.35rem', sm: '1.25rem', md: '1.5rem' }
@@ -101,7 +101,7 @@ const MembershipPage = () => {
         </Typography>
         <Grid container spacing={4} >
           {membershipInterests.map((interest) => (
-            <Grid  item size={{ xs: 12, sm: 6, md: 4 }} key={interest.id}>
+            <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={interest.id}>
 
               <Card sx={{ backgroundColor: (theme) => theme.palette.grey[100], height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
                 <CardContent sx={{ flexGrow: 1 }}>
@@ -127,14 +127,14 @@ const MembershipPage = () => {
         <Typography variant="h4" component="h2" gutterBottom sx={{ fontSize: { xs: '1.6rem', sm: '1.25rem', md: '1.5rem' } }}>
           Ready to Make an Impact?
         </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+        <Typography variant="body1" color="black" sx={{ mb: 3 }}>
           If you're passionate about marine metrology and want to contribute, we'd love to hear from you!
         </Typography>
         <Button variant="contained" size="large" color="secondary" component={HashLink} to="/TC/#contact" aria-label="Contact us about membership" >
           Get Involved!
         </Button>
       </Box>
-    </Container>
+    </React.Fragment>
   );
 };
 
