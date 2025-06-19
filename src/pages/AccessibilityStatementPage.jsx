@@ -1,6 +1,7 @@
 // src/pages/AccessibilityStatementPage.jsx
 import React from 'react';
 import { Box, Typography, Container, Link } from '@mui/material'; // <--- Import Link here
+import { HashLink } from 'react-router-hash-link';
 
 const AccessibilityStatementPage = () => {
   return (
@@ -33,8 +34,7 @@ const AccessibilityStatementPage = () => {
         We welcome your feedback on the accessibility of the Grant Organization website. Please let us know if you encounter accessibility barriers:
       </Typography>
       <Typography variant="body1">
-        Email: <Link href="mailto:accessibility@grantorg.org">accessibility@grantorg.org</Link><br />
-        Phone: <Link href="tel:+972-50-1234567">050-1234567</Link>
+        <Link component={HashLink} to="/TC/#contact">Contact Us</Link>
       </Typography>
     </Container>
   );

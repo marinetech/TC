@@ -17,8 +17,8 @@ import AccessibilityStatementPage from './pages/AccessibilityStatementPage';
 
 const appRoutes = [
   { path: "/TC/", element: <MainPage /> },
-  { path: "/TC/privacy-policy", element: <PrivacyPolicyPage /> },
-  { path: "/TC/accessibility-statement", element: <AccessibilityStatementPage /> },
+  { path: "/TC/privacy_policy", element: <PrivacyPolicyPage /> },
+  { path: "/TC/accessibility_statement", element: <AccessibilityStatementPage /> },
 ];
 
 function App() {

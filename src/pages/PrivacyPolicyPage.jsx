@@ -1,6 +1,7 @@
 // src/pages/PrivacyPolicyPage.jsx
 import React from 'react';
-import { Box, Typography, Container, Link } from '@mui/material'; // <--- Import Link here
+import { Box, Typography, Container, Link } from '@mui/material';
+import { HashLink } from 'react-router-hash-link';
 
 const PrivacyPolicyPage = () => {
   return (
@@ -71,14 +72,11 @@ const PrivacyPolicyPage = () => {
       </Typography>
       <Box sx={{ mt: 1, mb: 2 }}>
         <Typography variant="body1">
-          If you have any questions about this Privacy Policy, please contact us:
-        </Typography>
-        <Box component="ul" sx={{ mt: 1, pl: 2 }}>
-          <li><Typography variant="body1">By email: <Link href="mailto:privacy@grantorg.org">privacy@grantorg.org</Link></Typography></li>
-          <li><Typography variant="body1">By visiting this page on our website: <Link component={RouterLink} to="/contact">Contact Us</Link></Typography></li>
-        </Box>
-      </Box>
-    </Container>
+          If you have any questions about this Privacy Policy, please  <Link component={HashLink} to="/TC/#contact">Contact Us</Link>
+      </Typography>
+
+    </Box>
+    </Container >
   );
 };
 
