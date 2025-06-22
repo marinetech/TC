@@ -2,23 +2,29 @@ import React from 'react';
 import { Typography, Stack, Grid, Card, CardContent, CardMedia } from '@mui/material';
 
 
-import wave_img from "../assets/images/wave_img.png";
-import DJI_0070 from "../assets/images/DJI_0070.png";
-import NVO04615 from "../assets/images/NVO04615.png";
-import GOPR0093 from "../assets/images/GOPR0093.png";
-import MaskGroup4 from "../assets/images/Mask Group 4.png";
-import MaskGroup5 from "../assets/images/Mask Group 5.png";
+import wave_img from "../assets/images/wave_img.webp";
+import DJI_0070 from "../assets/images/DJI_0070.webp";
+import NVO04615 from "../assets/images/NVO04615.webp";
+import GOPR0093 from "../assets/images/GOPR0093.webp";
+import MaskGroup4 from "../assets/images/Mask Group 4.webp";
+import MaskGroup5 from "../assets/images/Mask Group 5.webp";
 
 const topics = [
   {
     "name": "Our Mission",
     "about_it": "To advance the science and practice of marine sensor design and data processing through the development of standards, methods, and technologies that ensure the accuracy, reliability, and interoperability of ocean measurements in diverse and challenging marine environments.",
     "img": MaskGroup4,
+    "img_alt":"Divers fixing bouy cable.",
+    "width": 738,
+    "height": 527,
   },
   {
     "name": "Our Vision",
     "about_it": "To be the leading body in Israel for promoting research and development in marine metrology, serving as a beacon of knowledge and inspiration for future generations of scientists.",
     "img": MaskGroup5,
+    "img_alt":"Sunset in the sea.",
+    "width": 738,
+    "height": 527,
   }
 ]
 
@@ -33,7 +39,15 @@ const AboutPage = () => {
 
             <Card sx={{ paddingLeft: 2, height: '100%', display: 'flex', boxShadow: 0 }}>
 
-              <CardMedia component="img" sx={{ height: 'auto', width: '40%', }} image={topic.img} alt="Live from space album cover" />
+              <CardMedia
+                component="img"
+                sx={{ height: 'auto', width: '40%', }}
+                image={topic.img}
+                alt={topic.img_alt}
+                width={topic.width}
+                height={topic.height}
+              />
+
               <CardContent sx={{ paddingTop: { xs: 0 }, }}>
 
                 <Grid justifyContent="left" item size={12} sx={{ paddingTop: 0, display: 'flex' }}>
@@ -42,10 +56,7 @@ const AboutPage = () => {
                     alt="decorative wave img"
                     sx={{ height: { xs: 15, sm: 20, md: 30, lg: 40 }, width: 'auto', maxWidth: '100%', mr: 2 }} />
 
-                  <Typography variant="h5" component="h2" sx={{
-                    color: '#072034', fontWeight: 'bold',
-                    fontSize: { xs: '1.2rem', sm: '1.6rem', md: '1.8rem', lg: '2.2rem' },
-                  }}>
+                  <Typography variant="h5" component="h2" sx={{ color: '#072034', fontWeight: 'bold', fontSize: { xs: '1.2rem', sm: '1.6rem', md: '1.8rem', lg: '2.2rem' }, }}>
                     {topic.name}
                   </Typography>
 
@@ -73,9 +84,9 @@ const AboutPage = () => {
 
 
           <Stack sx={{ p: 3, }} direction='row' spacing={{ xs: 1, }}>
-            <CardMedia component="img" image={NVO04615} alt="Organization Logo" sx={{ height: 'auto', width: '36%', }} />
-            <CardMedia component="img" image={GOPR0093} alt="Organization Logo" sx={{ height: 'auto', width: '27%', }} />
-            <CardMedia component="img" image={DJI_0070} alt="Organization Logo" sx={{ height: 'auto', width: '36%', }} />
+            <CardMedia component="img" image={NVO04615} alt="zodiac on the sea" sx={{ height: 'auto', width: '36%', }} />
+            <CardMedia component="img" image={GOPR0093} alt="Round container on the bottom of the sea" sx={{ height: 'auto', width: '27%', }} />
+            <CardMedia component="img" image={DJI_0070} alt="research ship with little zodiac near her" sx={{ height: 'auto', width: '36%', }} />
           </Stack>
 
           <CardContent>

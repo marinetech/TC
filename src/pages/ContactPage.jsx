@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-    Box,
-    Typography,
-    Container,
-    Grid,
-    Button,
-    Card,
-    CardContent,
-    Link,
-} from '@mui/material';
+import { Box, Typography, Container, Grid, Card, CardContent, Link, } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 
 const ContactPage = () => {
@@ -27,28 +18,16 @@ const ContactPage = () => {
                 Please fill your inquiry in this <Link href="https://docs.google.com/forms/d/e/1FAIpQLScPWz4l45XrDKrXaAfHH8je879FIZPX24Kt_bIsQhMA4jNGew/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Form</Link>.
             </Typography>
 
-
-
-            {/*
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScPWz4l45XrDKrXaAfHH8je879FIZPX24Kt_bIsQhMA4jNGew/viewform?embedded=true" width="640" height="1092" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-            */}
-
             <Grid container spacing={4} justifyContent="center">
 
                 {/* Contact Information */}
                 <Grid item xs={12} md={8}>
-                    <Typography component="h3" align="left" sx={{
-                        fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
-                        mt: 4, mb: 1
-                    }}>
+                    <Typography component="h3" align="left" sx={{ fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' }, mt: 4, mb: 1 }}>
                         You can also contact us directly:
                     </Typography>
                     <Card sx={{ height: '100%' }}>
                         <CardContent>
-                            <Typography component="h4" gutterBottom sx={{
-                                fontSize: { xs: '1.2rem', sm: '1.25rem', md: '1.5rem' },
-
-                            }}>
+                            <Typography component="h4" gutterBottom sx={{ fontSize: { xs: '1.2rem', sm: '1.25rem', md: '1.5rem' } }}>
                                 Direct Contacts
                             </Typography>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>

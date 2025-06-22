@@ -18,7 +18,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import icesLogo from "../../assets/images/icesLogo.png";
+import icesLogo from "../../assets/images/icesLogo.webp";
 
 const navLinks = [
   { "button_name": "Home", "to": "/TC/#home", "aria_label": "Navigate to Home section." },

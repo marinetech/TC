@@ -1,7 +1,6 @@
 // src/pages/MembershipPage.jsx
 import React from 'react';
-import { Box, Typography, Container, Grid, Card, CardContent, Button, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { Box, Typography, Grid, Card, CardContent, Button } from '@mui/material';
 import { HashLink } from 'react-router-hash-link';
 
 // Import Material-UI Icons

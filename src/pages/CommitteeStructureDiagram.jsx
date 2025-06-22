@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, CardMedia, Typography, Container, Grid, Card, CardContent } from '@mui/material';
 import { useTheme, useMediaQuery } from '@mui/material';
-import wave_img from "../assets/images/wave_img.png";
+import wave_img from "../assets/images/wave_img.webp";
 import { committeeStructureData } from './committeeData';
 
 const CommitteeStructureDiagram = () => {
@@ -41,17 +41,8 @@ const CommitteeStructureDiagram = () => {
                         height: { xs: 15, sm: 25, md: 30, lg: 40 }, width: 'auto', maxWidth: '100%', mr: 2,
                     }} />
 
-                    <Typography variant="h5" component="h2" sx={{
-                        fontSize: {
-                            xs: '1.2rem',
-                            sm: '1.5rem',
-                            md: '1.8rem',
-                            lg: '2.125rem'
-                        },
-
-                        color: '#072034', fontWeight: 'bold'
-                    }}>
-                        {mainCommitteeName} {/* "Technical Committee on Marine Metrology" */}
+                    <Typography variant="h5" component="h2" sx={{ fontSize: { xs: '1.2rem', sm: '1.5rem', md: '1.8rem', lg: '2.125rem' }, color: '#072034', fontWeight: 'bold' }}>
+                        {mainCommitteeName} 
                     </Typography>
                 </Grid>
 
@@ -93,7 +84,7 @@ const CommitteeStructureDiagram = () => {
 
                             {/* Topics - each in its own Card, vertically stacked */}
                             <Grid container spacing={1} direction="column" alignItems="center" sx={{ width: '100%' }}>
-                                {topics.length > 0 ? (
+                                {
                                     topics.map((topic, topicIndex) => (
                                         <Grid item key={topicIndex} sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                                             <Card sx={{
@@ -124,13 +115,7 @@ const CommitteeStructureDiagram = () => {
                                             </Card>
                                         </Grid>
                                     ))
-                                ) : (
-                                    <Grid item sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                                        <Typography variant="body2" fontStyle="italic" sx={{ color: '#555', mt: 1 }}>
-                                            No topics
-                                        </Typography>
-                                    </Grid>
-                                )}
+                               }
                             </Grid>
                         </Box>
                     </Grid>

@@ -9,9 +9,7 @@ const theme = createTheme({
     secondary: {
       main: '#dc004e', // red
     },
-    
-    // make sure the contrest is good
-    text: {
+        text: {
         primary: '#333',
         secondary: '#555',
     }

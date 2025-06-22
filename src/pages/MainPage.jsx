@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'; 
+import React, { Suspense } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Box, Typography, Button } from '@mui/material';
 
@@ -10,6 +10,7 @@ import AboutPage from './AboutPage';
 
 //import UpcomingEvents from './UpcomingEventsPage';
 const UpcomingEvents = React.lazy(() => import('./UpcomingEventsPage'));
+//const CommitteeStructureDiagram = React.lazy(() => import('./CommitteeStructureDiagram'));
 
 
 const MainPage = () => {
@@ -17,8 +18,8 @@ const MainPage = () => {
     <React.Fragment>
 
       <HomePage />
-      <CommitteeStructureDiagram />
-      <AboutPage />
+         <CommitteeStructureDiagram />
+       <AboutPage />
 
       <Suspense fallback={<div>Loading Events...</div>}>
         <UpcomingEvents />

@@ -1,27 +1,12 @@
 // src/pages/UpcomingEventsPage.jsx
-//import * as React from 'react';
-import React, { Suspense } from 'react'; 
-
-import {
-  Box,
-  Typography,
-  CardActions,
-  CardActionArea,
-  Grid,
-  Card,
-  CardContent,
-  Button,
-  CardMedia,
-} from '@mui/material';
-
-import wave_img from "../assets/images/wave_img.png";
+import React, { Suspense } from 'react';
+import { Box, Typography, CardActions, CardActionArea, Grid, Card, CardContent, Button, CardMedia, } from '@mui/material';
+import wave_img from "../assets/images/wave_img.webp";
 import events from './events.json';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import { Pagination, Navigation } from 'swiper/modules';
 
 //import ActivitiesCalendarPage from './ActivitiesCalendarPage';
@@ -88,7 +73,7 @@ const UpcomingEventsPage = () => {
                       >
                         {event.time} {event.location}
                       </Typography>
-                      <Typography   gutterBottom   variant="h3"   sx={{     textAlign: "center",     color: 'black',     fontWeight: 'bold',     fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' }   }} >
+                      <Typography gutterBottom variant="h3" sx={{ textAlign: "center", color: 'black', fontWeight: 'bold', fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' } }} >
                         {event.name}
                       </Typography>
                       <Typography variant="body2" sx={{ textAlign: "center", color: 'black', fontWeight: 'bold', fontSize: { xs: '0.7rem', sm: '0.8rem' } }} >
