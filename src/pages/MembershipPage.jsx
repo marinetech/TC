@@ -77,7 +77,7 @@ const MembershipPage = () => {
   return (
     <React.Fragment>
  
-      <Box id="membership" sx={{ py: 6, px: 2, textAlign: 'center', backgroundColor: (theme) => theme.palette.grey[100], borderRadius: 2, mb: 6, }}>
+      <Box id="membership" sx={{ py: 6, px: 2, textAlign: 'center', backgroundColor: "rgb(245,245,245)", borderRadius: 2, mb: 6, }}>
         <Typography variant="h3" component="h1" fontWeight="bold" gutterBottom
           sx={{ mb: 4, fontSize: { xs: '1.5rem', sm: '1.25rem', md: '1.5rem' } }}>
           Join the Marine Metrology TC Community
@@ -103,7 +103,7 @@ const MembershipPage = () => {
           {membershipInterests.map((interest) => (
             <Grid item size={{ xs: 12, sm: 6, md: 4 }} key={interest.id}>
 
-              <Card sx={{ backgroundColor: (theme) => theme.palette.grey[100], height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
+              <Card sx={{ backgroundColor: "rgb(245,245,245)", height: '100%', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Box sx={{ mb: 2 }}>
                     {interest.icon}
@@ -123,7 +123,7 @@ const MembershipPage = () => {
       </Box>
 
       {/* Call to Action Section */}
-      <Box sx={{ textAlign: 'center', my: 6, px: 1, py: 4, backgroundColor: (theme) => theme.palette.info.light, borderRadius: 2 }}>
+      <Box sx={{ textAlign: 'center', my: 6, px: 1, py: 4, backgroundColor: "#03a9f4", borderRadius: 2 }}>
         <Typography variant="h4" component="h2" gutterBottom sx={{ fontSize: { xs: '1.6rem', sm: '1.25rem', md: '1.5rem' } }}>
           Ready to Make an Impact?
         </Typography>

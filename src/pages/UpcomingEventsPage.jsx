@@ -1,5 +1,7 @@
 // src/pages/UpcomingEventsPage.jsx
-import * as React from 'react';
+//import * as React from 'react';
+import React, { Suspense } from 'react'; 
+
 import {
   Box,
   Typography,
@@ -12,7 +14,6 @@ import {
   CardMedia,
 } from '@mui/material';
 
-import ActivitiesCalendarPage from './ActivitiesCalendarPage';
 import wave_img from "../assets/images/wave_img.png";
 import events from './events.json';
 
@@ -23,13 +24,16 @@ import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from 'swiper/modules';
 
+//import ActivitiesCalendarPage from './ActivitiesCalendarPage';
+const ActivitiesCalendarPage = React.lazy(() => import('./ActivitiesCalendarPage'));
+
 const UpcomingEventsPage = () => {
   return (
     <React.Fragment>
-       <Box sx={{ my: 6 }} id="activities">
+      <Box sx={{ my: 6 }} id="activities">
 
         <Grid justifyContent="center" item size={12} sx={{ px: 1, paddingTop: 0, display: 'flex' }}>
-          <CardMedia component="img" image={wave_img} alt="Organization Logo" sx={{ height: 30, width: 'auto', maxWidth: '100%', mr: 2 }} />
+          <CardMedia component="img" image={wave_img} alt="decorative wave img" sx={{ height: 30, width: 'auto', maxWidth: '100%', mr: 2 }} />
           <Typography
             variant="h5"
             component="h2"
@@ -43,7 +47,7 @@ const UpcomingEventsPage = () => {
           </Typography>
         </Grid>
 
-        <Box sx={{ mx: 'auto', maxWidth:   '100%', px: { xs: 0, sm: 0 } }}>
+        <Box sx={{ mx: 'auto', maxWidth: '100%', px: { xs: 0, sm: 0 } }}>
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
@@ -53,16 +57,16 @@ const UpcomingEventsPage = () => {
             modules={[Pagination, Navigation]}
             className="mySwiper"
             breakpoints={{
-              900: { slidesPerView: 2,centerInsufficientSlides: true},
-              1275: { slidesPerView: 3, centerInsufficientSlides: true},
-              1700: { slidesPerView: Math.min(events.length, 4),centerInsufficientSlides: true },
+              900: { slidesPerView: 2, centerInsufficientSlides: true },
+              1275: { slidesPerView: 3, centerInsufficientSlides: true },
+              1700: { slidesPerView: Math.min(events.length, 4), centerInsufficientSlides: true },
             }}
 
           >
             {events.map((event, i) => (
               <SwiperSlide key={i} style={{ display: 'flex', justifyContent: 'center' }}>
                 <Card sx={{
-                  my:4,
+                  my: 4,
                   display: 'flex',
                   borderRadius: 10,
                   flexDirection: 'column',
@@ -79,38 +83,21 @@ const UpcomingEventsPage = () => {
                         sx={{
                           textAlign: "center",
                           mb: { xs: 0.5, sm: 1 },
-                          fontSize: { xs: '0.75rem', sm: '0.875rem' } // Responsive font size for body2
+                          fontSize: { xs: '0.75rem', sm: '0.875rem' }
                         }}
                       >
                         {event.time} {event.location}
                       </Typography>
-                      <Typography
-                        gutterBottom
-                        variant="h5"
-                        sx={{
-                          textAlign: "center",
-                          color: 'black',
-                          fontWeight: 'bold',
-                          fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' } // Responsive font size for h5
-                        }}
-                      >
+                      <Typography   gutterBottom   variant="h3"   sx={{     textAlign: "center",     color: 'black',     fontWeight: 'bold',     fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' }   }} >
                         {event.name}
                       </Typography>
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          textAlign: "center",
-                          color: 'black',
-                          fontWeight: 'bold',
-                          fontSize: { xs: '0.7rem', sm: '0.8rem' } // Responsive font size for description
-                        }}
-                      >
+                      <Typography variant="body2" sx={{ textAlign: "center", color: 'black', fontWeight: 'bold', fontSize: { xs: '0.7rem', sm: '0.8rem' } }} >
                         {event.description}
                       </Typography>
                     </CardContent>
                   </CardActionArea>
 
-                  <CardActions sx={{ justifyContent: 'center', pb: { xs: 1, sm: 2 } }}> {/* Responsive padding-bottom */}
+                  <CardActions sx={{ justifyContent: 'center', pb: { xs: 1, sm: 2 } }}>
                     <Button
                       size="large"
                       href={event.link}
@@ -122,9 +109,9 @@ const UpcomingEventsPage = () => {
                         fontWeight: 'bold',
                         color: 'white',
                         borderRadius: '30px',
-                        px: { xs: 2, sm: 4 }, // Responsive horizontal padding
-                        py: { xs: 1, sm: 2 }, // Responsive vertical padding
-                        fontSize: { xs: '0.75rem', sm: '1rem' }, // Responsive font size for button
+                        px: { xs: 2, sm: 4 },
+                        py: { xs: 1, sm: 2 },
+                        fontSize: { xs: '0.75rem', sm: '1rem' },
                         '&:hover': { backgroundColor: '#051624' },
                       }}
                     >
@@ -136,7 +123,9 @@ const UpcomingEventsPage = () => {
             ))}
           </Swiper>
         </Box>
-        <ActivitiesCalendarPage />
+        <Suspense fallback={<div>Loading Calendar...</div>}>
+          <ActivitiesCalendarPage />
+        </Suspense>
       </Box>
     </React.Fragment>
   );

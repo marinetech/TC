@@ -1,5 +1,6 @@
 // src/pages/ActivitiesCalendarPage.jsx
 import * as React from 'react';
+
 import {
   Box,
   Typography,
@@ -18,10 +19,7 @@ import {
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-
-// וודא שהנתיב נכון לקובץ ה-JSON שלך
 import importedEvents from './events.json';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -58,10 +56,10 @@ const transformedCalendarEvents = importedEvents.map((event, index) => {
 
   // Fallback if parsing fails for some reason
   if (!moment(startDate).isValid() || !moment(endDate).isValid()) {
-      console.error(`Failed to parse dates for event: ${event.name}, time: ${event.time}`);
-      // Provide fallback dates or skip the event
-      startDate = new Date();
-      endDate = new Date();
+    console.error(`Failed to parse dates for event: ${event.name}, time: ${event.time}`);
+    // Provide fallback dates or skip the event
+    startDate = new Date();
+    endDate = new Date();
   }
 
   return {
@@ -82,8 +80,9 @@ const EventComponent = ({ event }) => (
     <strong>{event.title}</strong>
     {event.description && <p style={{ margin: '4px 0', fontSize: '0.9em' }}>{event.description}</p>}
     {event.link && (
-      <a href={event.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.8em', display: 'block', marginTop: '5px' }}>
-        Learn More
+      <a href={event.link} target="_blank" rel="noopener noreferrer"
+        style={{ fontSize: '0.8em', display: 'block', marginTop: '5px' }}>
+        Learn More about {event.title}
       </a>
     )}
   </Box>
@@ -159,15 +158,7 @@ const ActivitiesCalendarPage = () => {
         </Box>
       )}
 
-      <Dialog
-        open={open}
-        slots={{ transition: Transition }}
-        keepMounted
-        onClose={handleClose}
-        aria-describedby="alert-dialog-slide-description"
-        maxWidth="md"
-        fullWidth
-      >
+      <Dialog open={open} slots={{ transition: Transition }} keepMounted onClose={handleClose} aria-describedby="alert-dialog-slide-description" maxWidth="md" fullWidth >
         <DialogTitle sx={{ backgroundColor: theme.palette.primary.main, color: 'white', py: 2, px: 3 }}>
           <Typography variant="h6" component="span" sx={{ fontWeight: 'bold' }}>
             Upcoming Events Calendar
@@ -177,35 +168,35 @@ const ActivitiesCalendarPage = () => {
           <DialogContentText id="calendar-dialog-slide-description" component="div">
             {/* Adjusted Box height for better responsiveness */}
             <Box sx={{
-                my: { xs: 2, sm: 3 },
-                minHeight: { xs: '400px', sm: '500px' }, // Minimum height to avoid collapse
-                height: { xs: 'calc(100vh - 180px)', sm: '600px', md: '700px' }, // Responsive height
-                // Added overflow auto for smaller screens, in case content spills
-                overflow: 'auto',
-                '& .rbc-toolbar': { // Styling for calendar toolbar
-                    flexDirection: { xs: 'column', sm: 'row' },
-                    '.rbc-toolbar-label': {
-                        fontSize: { xs: '1rem', sm: '1.2rem' },
-                        mb: { xs: 1, sm: 0 },
-                    },
-                    '& button': {
-                        fontSize: { xs: '0.75rem', sm: '0.875rem' },
-                        px: { xs: 1, sm: 2 },
-                        py: { xs: 0.5, sm: 1 },
-                    }
+              my: { xs: 2, sm: 3 },
+              minHeight: { xs: '400px', sm: '500px' }, // Minimum height to avoid collapse
+              height: { xs: 'calc(100vh - 180px)', sm: '600px', md: '700px' }, // Responsive height
+              // Added overflow auto for smaller screens, in case content spills
+              overflow: 'auto',
+              '& .rbc-toolbar': { // Styling for calendar toolbar
+                flexDirection: { xs: 'column', sm: 'row' },
+                '.rbc-toolbar-label': {
+                  fontSize: { xs: '1rem', sm: '1.2rem' },
+                  mb: { xs: 1, sm: 0 },
                 },
-                '& .rbc-header': { // Smaller headers for days of week on small screens
-                    fontSize: { xs: '0.7em', sm: '0.85em' },
-                    pt: { xs: 0.5, sm: 0.8 },
-                    pb: { xs: 0.5, sm: 0.8 }
-                },
-                '& .rbc-day-bg': { // Smaller day cells on small screens
-                    fontSize: { xs: '0.75em', sm: 'inherit' }
-                },
-                '& .rbc-event': { // Smaller event text on small screens
-                    fontSize: { xs: '0.7em', sm: '0.8em' },
-                    p: { xs: 0.5, sm: 0.8 }
+                '& button': {
+                  fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                  px: { xs: 1, sm: 2 },
+                  py: { xs: 0.5, sm: 1 },
                 }
+              },
+              '& .rbc-header': { // Smaller headers for days of week on small screens
+                fontSize: { xs: '0.7em', sm: '0.85em' },
+                pt: { xs: 0.5, sm: 0.8 },
+                pb: { xs: 0.5, sm: 0.8 }
+              },
+              '& .rbc-day-bg': { // Smaller day cells on small screens
+                fontSize: { xs: '0.75em', sm: 'inherit' }
+              },
+              '& .rbc-event': { // Smaller event text on small screens
+                fontSize: { xs: '0.7em', sm: '0.8em' },
+                p: { xs: 0.5, sm: 0.8 }
+              }
             }}>
               <Calendar
                 localizer={localizer}
@@ -224,7 +215,7 @@ const ActivitiesCalendarPage = () => {
 
                 components={{ event: EventComponent }}
                 onSelectEvent={event => alert(`Event: ${event.title}\nDescription: ${event.description}${event.link ? `\nLink: ${event.link}` : ''}`)}
-                // defaultDate={moment().toDate()} // This is now controlled by 'date' prop
+              // defaultDate={moment().toDate()} // This is now controlled by 'date' prop
               />
             </Box>
           </DialogContentText>

@@ -37,7 +37,7 @@ const CommitteeStructureDiagram = () => {
                 <Grid justifyContent="center" item size={12}
                     sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: { xs: 1, sm: 4, md: 0, lg: 0 } }}>
 
-                    <CardMedia component="img" image={wave_img} alt="Organization Logo" sx={{
+                    <CardMedia component="img" image={wave_img} alt="decorative wave img" sx={{
                         height: { xs: 15, sm: 25, md: 30, lg: 40 }, width: 'auto', maxWidth: '100%', mr: 2,
                     }} />
 
@@ -126,7 +126,7 @@ const CommitteeStructureDiagram = () => {
                                     ))
                                 ) : (
                                     <Grid item sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                                        <Typography variant="body2" fontStyle="italic" sx={{ color: theme.palette.text.secondary, mt: 1 }}>
+                                        <Typography variant="body2" fontStyle="italic" sx={{ color: '#555', mt: 1 }}>
                                             No topics
                                         </Typography>
                                     </Grid>

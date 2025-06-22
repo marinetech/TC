@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Suspense } from 'react'; 
 import { HashLink } from 'react-router-hash-link';
 import { Box, Typography, Button } from '@mui/material';
 
-import CommitteeStructureDiagram from './CommitteeStructureDiagram';
-import ContactPage from './ContactPage';
-import MembershipPage from './MembershipPage';
-import UpcomingEvents from './UpcomingEventsPage';
 import HomePage from './HomePage';
+import ContactPage from './ContactPage';
+import CommitteeStructureDiagram from './CommitteeStructureDiagram';
+import MembershipPage from './MembershipPage';
 import AboutPage from './AboutPage';
+
+//import UpcomingEvents from './UpcomingEventsPage';
+const UpcomingEvents = React.lazy(() => import('./UpcomingEventsPage'));
+
 
 const MainPage = () => {
   return (
@@ -16,7 +19,10 @@ const MainPage = () => {
       <HomePage />
       <CommitteeStructureDiagram />
       <AboutPage />
-      <UpcomingEvents />
+
+      <Suspense fallback={<div>Loading Events...</div>}>
+        <UpcomingEvents />
+      </Suspense>
 
       <Box sx={{ p: 2, py: 1, backgroundColor: "#072034", display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
         <Typography variant="h5" component="h2" gutterBottom sx={{ color: "white", fontWeight: 'bold', bx: 2 }}>

@@ -4,15 +4,10 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography, Container, Link } from '@mui/material';
 
 const Footer = () => (
-  <Box
-    component="footer"
+  <Box component="footer"
     sx={{
-      mt: 8,
-      py: 3,
-      backgroundColor: (theme) =>
-        theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
-      textAlign: 'center',
-      color: (theme) => theme.palette.text.secondary,
+      mt: 8, py: 3, textAlign: 'center', color: (theme) => theme.palette.text.secondary,
+      backgroundColor: (theme) => theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
     }}
   >
     <Container >

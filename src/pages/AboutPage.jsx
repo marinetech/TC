@@ -31,22 +31,22 @@ const AboutPage = () => {
 
           <Grid item xs={12} md={4} key={i}>
 
-            <Card sx={{ paddingLeft: 2, height: '100%', display: 'flex' ,boxShadow:0}}>
+            <Card sx={{ paddingLeft: 2, height: '100%', display: 'flex', boxShadow: 0 }}>
 
               <CardMedia component="img" sx={{ height: 'auto', width: '40%', }} image={topic.img} alt="Live from space album cover" />
               <CardContent sx={{ paddingTop: { xs: 0 }, }}>
 
                 <Grid justifyContent="left" item size={12} sx={{ paddingTop: 0, display: 'flex' }}>
-                  
+
                   <CardMedia component="img" image={wave_img}
-                    alt="Organization Logo"
-                     sx={{ height: {xs:15, sm:20, md: 30, lg:40}, width: 'auto', maxWidth: '100%', mr: 2 }} />
-                
+                    alt="decorative wave img"
+                    sx={{ height: { xs: 15, sm: 20, md: 30, lg: 40 }, width: 'auto', maxWidth: '100%', mr: 2 }} />
+
                   <Typography variant="h5" component="h2" sx={{
                     color: '#072034', fontWeight: 'bold',
                     fontSize: { xs: '1.2rem', sm: '1.6rem', md: '1.8rem', lg: '2.2rem' },
                   }}>
-                    {topic.name} 
+                    {topic.name}
                   </Typography>
 
                 </Grid>
@@ -63,18 +63,18 @@ const AboutPage = () => {
       </Grid>
       <Grid item xs={12}>
 
-        <Card sx={{ padding:4 ,px:{xs:0,sm:4}, height: '100%', display: 'flex', flexDirection: 'column', backgroundColor: "#072034" }}>
-          <Typography variant="h5" component="h3" gutterBottom sx={{ 
-                                fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.4rem', lg: '2.8rem' },
-
-            mb: 1, textAlign: "center", color: 'white', fontWeight: 'bold' }}>
+        <Card sx={{ padding: 4, px: { xs: 0, sm: 4 }, height: '100%', display: 'flex', flexDirection: 'column', backgroundColor: "#072034" }}>
+          <Typography variant="h5" component="h3" gutterBottom sx={{
+            fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.4rem', lg: '2.8rem' },
+            mb: 1, textAlign: "center", color: 'white', fontWeight: 'bold'
+          }}>
             Key Objectives
           </Typography>
 
 
-          <Stack sx={{ p: 3,  }} direction='row' spacing={{ xs: 1,  }}>
-            <CardMedia component="img" image={NVO04615} alt="Organization Logo"   sx={{ height: 'auto', width: '36%', }} />
-            <CardMedia component="img" image={GOPR0093} alt="Organization Logo"  sx={{ height: 'auto', width: '27%', }} />
+          <Stack sx={{ p: 3, }} direction='row' spacing={{ xs: 1, }}>
+            <CardMedia component="img" image={NVO04615} alt="Organization Logo" sx={{ height: 'auto', width: '36%', }} />
+            <CardMedia component="img" image={GOPR0093} alt="Organization Logo" sx={{ height: 'auto', width: '27%', }} />
             <CardMedia component="img" image={DJI_0070} alt="Organization Logo" sx={{ height: 'auto', width: '36%', }} />
           </Stack>
 

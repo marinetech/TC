@@ -54,7 +54,7 @@ const Header = () => {
               to={link.to}
               aria-label={link.aria_label}
               sx={{ textAlign: 'center' }}
-              scroll={el => scrollWithOffset(el, 84)} // 84px כדוגמה לגובה AppBar
+              scroll={el => scrollWithOffset(el, 84)}  
             >
               <ListItemText primary={link.button_name} />
             </ListItemButton>
@@ -66,22 +66,16 @@ const Header = () => {
 
   return (
     <AppBar
-      position="sticky" // שנה ל-sticky כדי שהראש יישאר בראש העמוד במהלך גלילה
+      position="sticky"  
       sx={{
         backgroundColor: 'white',
         color: 'black',
         borderTop: '20px solid black',
         borderRadius: 0,
         boxShadow: 'none',
-        '& .MuiButton-root': {
-          color: 'black',
-        },
-        '& .MuiTypography-root': {
-          color: 'black',
-        },
-        '& .MuiIconButton-root': {
-          color: 'black',
-        }
+        '& .MuiButton-root': { color: 'black', },
+        '& .MuiTypography-root': { color: 'black', },
+        '& .MuiIconButton-root': { color: 'black', }
       }}
     >
       <Toolbar sx={{ flexDirection: 'row-reverse' }}>
@@ -94,10 +88,9 @@ const Header = () => {
             <Button
               key={link.to}
               color="inherit"
-              component={HashLink} // השתמש ב-HashLink כאן
+              component={HashLink}
               to={link.to}
               aria-label={link.aria_label}
-              // אופציונלי: הגדרת offset
               scroll={el => scrollWithOffset(el, 84)}
             >
               {link.button_name}
@@ -106,13 +99,13 @@ const Header = () => {
         </Box>
 
         <Link
-          component={HashLink} // השתמש ב-HashLink גם עבור הלוגו
-          to="/TC/#home" // מפנה חזרה לראש העמוד
+          component={HashLink}
+          to="/TC/#home"
           color="inherit"
           underline="none"
           aria-label="Organization home page"
           sx={{ display: 'flex', alignItems: 'center', mr: 'auto', color: 'black' }}
-          scroll={el => scrollWithOffset(el, 84)} // גלילה לראש הדף ללא offset
+          scroll={el => scrollWithOffset(el, 84)}
         >
           <CardMedia component="img" image={icesLogo} alt="Organization Logo" sx={{ height: 40, width: 'auto', maxWidth: '100%', mr: 1 }} />
         </Link>

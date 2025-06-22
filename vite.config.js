@@ -1,9 +1,9 @@
 // vite.config.js
-import { defineConfig } from 'vite'; // <--- וודא ששורה זו קיימת ונכונה
+import { defineConfig } from 'vite';  
 import react from '@vitejs/plugin-react';
 
 import path from 'path';
-import { fileURLToPath } from 'url'; // <--- וודא שזה `from 'url'` עם שווה יחיד
+import { fileURLToPath } from 'url';  
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,9 +23,8 @@ function getRepoName() {
       return url.pathname;
     }
   } catch (error) {
-    // חשוב: נסה לקרוא שוב מחדש את השגיאה כאן
     console.warn('Could not read package.json or homepage in vite.config.js. Defaulting base to "/"');
-    console.error('Specific error during package.json read:', error); // הדפסת השגיאה הספציפית
+    console.error('Specific error during package.json read:', error); 
   }
   console.log('Defaulting base to "/" in vite.config.js');
   return '/';

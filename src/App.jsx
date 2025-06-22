@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { Container, CssBaseline } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
@@ -8,9 +8,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-// Import pages - רק MainPage יישאר כדף ראשי
 import MainPage from './pages/MainPage';
-// נשאיר את אלה רק אם הם חייבים להיות דפים נפרדים ולא קטעים ב-HomePage
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import AccessibilityStatementPage from './pages/AccessibilityStatementPage';
 
@@ -23,18 +21,17 @@ const appRoutes = [
 
 function App() {
   return (
-    <Router basename="/"> {/* חשוב להגדיר את basename ל-GitHub Pages */}
+    <Router basename="/">
       <CssBaseline />
       <Header />
-    <React.Fragment>
+      <React.Fragment>
 
         <Routes>
           {appRoutes.map((route) => (
             <Route key={route.path} path={route.path} element={route.element} />
           ))}
-          {/* ניתן להוסיף כאן מסלול לטיפול ב-404 אם צריך */}
         </Routes>
-          </React.Fragment>
+      </React.Fragment>
       <Footer />
     </Router>
   );
